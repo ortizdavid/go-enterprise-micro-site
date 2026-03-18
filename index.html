@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-PT" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go Enterprise Micro | Industrial-Grade Backend Template</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Configuração para o Tailwind reconhecer cores customizadas se necessário
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#020617',
+                        card: '#0f172a',
+                        cyan: {
+                            400: '#22d3ee',
+                            600: '#0891b2',
+                            900: '#164e63',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="bg-dark text-slate-300 antialiased font-sans">
+
+    <nav class="sticky top-0 z-50 bg-dark/80 backdrop-blur-md border-b border-slate-800">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-cyan-600 rounded flex items-center justify-center text-white font-bold">G</div>
+                <span class="text-white font-bold tracking-tight uppercase text-sm italic">Go Enterprise <span class="text-cyan-400">Micro</span></span>
+            </div>
+            <div class="hidden md:flex gap-8 text-xs font-bold uppercase tracking-widest">
+                <a href="#features" class="hover:text-cyan-400 transition-colors">Features</a>
+                <a href="#architecture" class="hover:text-cyan-400 transition-colors">Arquitetura</a>
+                <a href="#pricing" class="text-cyan-400 border-b border-cyan-400 pb-1">Obter Acesso</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="relative pt-20 pb-32 overflow-hidden">
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 tracking-tighter leading-none">
+                Construa Microserviços <br>
+                <span class="text-cyan-400">Production-Ready</span> hoje.
+            </h1>
+            <p class="max-w-2xl mx-auto text-lg text-slate-400 mb-10 leading-relaxed">
+                Elimine 80% do boilerplate com um template proprietário de engenharia sênior. 
+                Focado em performance, auditoria e resiliência distribuída.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#pricing" class="btn-primary px-10 py-4 rounded-lg text-white font-bold text-sm uppercase tracking-widest">
+                    Comprar Licença — $199
+                </a>
+                <a href="#architecture" class="bg-slate-800 hover:bg-slate-700 px-10 py-4 rounded-lg text-white font-bold text-sm uppercase tracking-widest transition-all">
+                    Explorar Estrutura
+                </a>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-6 mt-20">
+            <div class="max-w-4xl mx-auto terminal-window rounded-xl overflow-hidden shadow-2xl">
+                <div class="bg-slate-800/50 px-4 py-3 border-b border-slate-700 flex items-center justify-between">
+                    <div class="flex gap-2">
+                        <div class="w-3 h-3 rounded-full bg-red-500/50"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500/50"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-500/50"></div>
+                    </div>
+                    <span class="text-[10px] font-mono text-slate-500 uppercase">Makefile Automation</span>
+                </div>
+                <div class="p-8 font-mono text-sm leading-relaxed">
+                    <div class="flex gap-4">
+                        <span class="text-cyan-400">➜</span>
+                        <span class="text-white">make setup_dev</span>
+                    </div>
+                    <div class="mt-2 text-slate-500 italic"># Inicializando ambiente industrial...</div>
+                    <div class="text-slate-400">🚀 Setting up DEV environment...</div>
+                    <div class="text-slate-400">[Atlas] Applying migrations... <span class="text-green-400 font-bold">DONE</span></div>
+                    <div class="text-slate-400">[Seed] Running Go logic (Roles, Users, Flags)... <span class="text-green-400 font-bold">DONE</span></div>
+                    <div class="text-slate-400">[Seed] Applying SQL Reference Data... <span class="text-green-400 font-bold">DONE</span></div>
+                    <div class="text-slate-400">[Views] Automatically updating SQL views... <span class="text-green-400 font-bold">DONE</span></div>
+                    <div class="mt-4 text-white font-bold">✅ Sistema pronto para produção em 4.2s.</div>
+                    <div class="mt-2 text-cyan-400 font-bold">➜ <span class="cursor-blink"></span></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="features" class="py-24 border-t border-slate-800">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="bg-card p-8 rounded-2xl feature-card group">
+                    <div class="w-12 h-12 bg-cyan-900/30 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-microchip text-cyan-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">CQRS Primordial</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Segregação total entre leitura e escrita. Repositórios optimizados para performance máxima em SQL e Cache.
+                    </p>
+                </div>
+                <div class="bg-card p-8 rounded-2xl feature-card group">
+                    <div class="w-12 h-12 bg-cyan-900/30 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-shield-halved text-cyan-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Enterprise Auth</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Sistema de Identity completo com JWT, Blacklisting de Tokens, RBAC e Middlewares de autorização.
+                    </p>
+                </div>
+                <div class="bg-card p-8 rounded-2xl feature-card group">
+                    <div class="w-12 h-12 bg-cyan-900/30 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-code text-cyan-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Scaffolding Magic</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Geração de código via templates. Crie Handlers e Repositories em segundos mantendo o rigor técnico.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="architecture" class="py-24 bg-slate-900/20">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row gap-16 items-center">
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold text-white mb-6 uppercase tracking-widest text-xs text-cyan-400">The Engineering Inside</h2>
+                    <h3 class="text-4xl font-extrabold text-white mb-8 leading-tight">Arquitetura de 247 ficheiros pronta para escalar.</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3 text-sm">
+                            <i class="fas fa-check text-cyan-400"></i> <span>Transactional Outbox Pattern para RabbitMQ</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-sm">
+                            <i class="fas fa-check text-cyan-400"></i> <span>Migrações declarativas via Atlas HCL</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-sm">
+                            <i class="fas fa-check text-cyan-400"></i> <span>Observability com Zap Logger e Jaeger</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="md:w-1/2 bg-dark p-6 rounded-xl border border-slate-800 font-mono text-[11px] text-slate-500 overflow-x-auto">
+                    <p class="text-cyan-400 mb-2">// Directory Structure Blueprint</p>
+                    <div class="space-y-1">
+                        <p>├── <span class="text-white">internal/core/dtos</span> <span class="text-slate-700 italic"># Strict Data Contracts</span></p>
+                        <p>├── <span class="text-white">internal/core/repositories</span> <span class="text-slate-700 italic"># CQRS Base</span></p>
+                        <p>├── <span class="text-white">pkg/auth</span> <span class="text-slate-700 italic"># JWT & Token Logic</span></p>
+                        <p>└── <span class="text-white">Makefile</span> <span class="text-slate-700 italic"># The Industrial Heart</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="py-32">
+        <div class="container mx-auto px-6 text-center">
+            <div class="max-w-2xl mx-auto bg-card border-2 border-cyan-400/20 rounded-3xl p-12 relative">
+                <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-cyan-600 text-white px-6 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
+                    Licença Comercial Vitalícia
+                </div>
+                <h2 class="text-4xl font-extrabold text-white mb-4 italic italic">Go Enterprise Micro</h2>
+                <p class="text-slate-400 mb-10">Acesso imediato ao repositório privado e atualizações vitalícias.</p>
+                
+                <div class="mb-10">
+                    <span class="text-6xl font-black text-white leading-none">$199<span class="text-2xl font-normal text-slate-500">.00</span></span>
+                </div>
+
+                <a href="#" class="btn-primary w-full block py-5 rounded-xl text-white font-black text-lg uppercase tracking-widest mb-6">
+                    Obter Acesso Agora
+                </a>
+                
+                <p class="text-[10px] text-slate-500 uppercase tracking-widest leading-relaxed">
+                    Entrega via GitHub Private Repo <br>
+                    Suporte via Discord | Documentação Completa
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-slate-800 text-center">
+        <p class="text-slate-600 text-xs font-mono">
+            &copy; 2026 ORTIZ DAVID. BUILDING FOR PRODUCTION SINCE DAY ONE.
+        </p>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>
