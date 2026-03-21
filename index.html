@@ -85,38 +85,42 @@
                     <span class="text-[10px] font-mono text-slate-500 uppercase tracking-widest">Enterprise Command Center — Makefile</span>
                 </div>
 
-                <div class="p-8 font-mono text-sm leading-relaxed bg-dark/90">
+                <div class="p-8 font-mono text-sm leading-relaxed bg-dark/95">
+                    
                     <div class="flex gap-4">
                         <span class="text-cyan-400">➜</span>
                         <span class="text-white">make docker-up setup-dev</span>
                     </div>
-                    <div class="mt-2 text-slate-500 italic"># Levantando infraestrutura (Postgres, Redis, RabbitMQ, MinIO)...</div>
+                    <div class="mt-2 text-slate-500 italic"># Orquestrando Containers & Infraestrutura...</div>
                     <div class="text-slate-400">📦 Container enterprise_db      | <span class="text-green-400">healthy</span></div>
+                    <div class="text-slate-400">📦 Container enterprise_redis   | <span class="text-green-400">healthy</span></div>
                     <div class="text-slate-400">📦 Container enterprise_minio   | <span class="text-green-400">healthy</span></div>
                     
-                    <div class="mt-4 text-slate-500 italic"># Sincronizando Esquema com Atlas & GORM Models...</div>
-                    <div class="text-slate-400">🚀 Applying migrations to <span class="text-yellow-500">core.files</span>, <span class="text-yellow-500">auth.users</span>... <span class="text-green-400 font-bold">OK</span></div>
-                    <div class="text-slate-400">📊 Updating SQL Views (file_views, user_views)... <span class="text-green-400 font-bold">DONE</span></div>
+                    <div class="mt-4 text-slate-500 italic"># Sincronizando Esquema (Atlas) & Seeds...</div>
+                    <div class="text-slate-400">🚀 Applying migrations to <span class="text-yellow-500">core.files</span>... <span class="text-green-400">DONE</span></div>
+                    <div class="text-slate-400">🌱 Running Go seed (Roles, Users, Flags)... <span class="text-green-400">DONE</span></div>
+                    <div class="text-slate-400">📊 Updating SQL Views (file_views)... <span class="text-green-400">DONE</span></div>
 
-                    <div class="flex gap-4 mt-6">
+                    <div class="flex gap-4 mt-8 border-t border-slate-800 pt-6">
                         <span class="text-cyan-400">➜</span>
-                        <span class="text-white">make docker-build</span>
+                        <span class="text-white">make docker-release</span>
                     </div>
-                    <div class="mt-2 text-slate-500 italic"># Executando Build Multi-stage (Go 1.25 + Alpine)...</div>
-                    <div class="text-slate-400">[1/3] Building API service... <span class="text-blue-400">12.4MB</span></div>
-                    <div class="text-slate-400">[2/3] Building Worker service... <span class="text-blue-400">9.8MB</span></div>
-                    <div class="text-slate-400">[3/3] Optimizing Docker layers (Non-root user)... <span class="text-green-400 font-bold">DONE</span></div>
+                    <div class="mt-2 text-slate-500 italic"># Full Cycle: Build Multi-stage -> Push to Registry</div>
+                    <div class="text-slate-400">[1/4] Building Docker Image (Go 1.25)... <span class="text-blue-400">OK</span></div>
+                    <div class="text-slate-400">[2/4] Running Migrations (Docker context)... <span class="text-blue-400">OK</span></div>
+                    <div class="text-slate-400">[3/4] Running Seeds (Internal Tool)... <span class="text-blue-400">OK</span></div>
+                    <div class="text-slate-400">[4/4] Pushing <span class="text-cyan-400">ortizdaviddocker/go-enterprise-micro</span>... <span class="text-green-400 font-bold">SUCCESS</span></div>
 
-                    <div class="mt-8 p-4 bg-cyan-950/20 border border-cyan-900/30 rounded-lg">
+                    <div class="mt-8 p-4 bg-cyan-950/30 border border-cyan-900/50 rounded-lg">
                         <div class="flex items-center gap-3">
                             <span class="flex h-3 w-3 relative">
                                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
                                 <span class="relative inline-flex rounded-full h-3 w-3 bg-cyan-500"></span>
                             </span>
-                            <span class="text-white font-bold uppercase text-xs tracking-widest">System Online: All Services Healthy</span>
+                            <span class="text-white font-bold uppercase text-xs tracking-widest">Environment Live & Optimized</span>
                         </div>
-                        <div class="mt-2 text-slate-400 text-xs">
-                            API: http://localhost:3000 | Storage: http://localhost:9003 (MinIO)
+                        <div class="mt-2 text-slate-500 text-[11px]">
+                            API: :3000 | MinIO: :9003 | RabbitMQ: :15672 | Redis: :6380
                         </div>
                     </div>
                     
