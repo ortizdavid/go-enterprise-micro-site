@@ -104,34 +104,68 @@
 
     <section id="features" class="py-24 border-t border-slate-800">
         <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-3 gap-12">
-                <div class="bg-card p-8 rounded-2xl feature-card group">
+            <div class="grid md:grid-cols-3 gap-8 md:gap-12">
+                
+                <div class="bg-card p-8 rounded-2xl feature-card group border border-slate-800/50 hover:border-cyan-400/30 transition-all">
                     <div class="w-12 h-12 bg-cyan-900/30 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                         <i class="fas fa-microchip text-cyan-400 text-xl"></i>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-3">CQRS Primordial</h3>
                     <p class="text-slate-400 text-sm leading-relaxed">
-                        Segregação total entre leitura e escrita. Repositórios optimizados para performance máxima em SQL e Cache.
+                        Segregação total entre leitura e escrita. Repositórios otimizados para performance máxima em SQL e Cache distribuído.
                     </p>
                 </div>
-                <div class="bg-card p-8 rounded-2xl feature-card group">
+
+                <div class="bg-card p-8 rounded-2xl feature-card group border border-slate-800/50 hover:border-cyan-400/30 transition-all">
                     <div class="w-12 h-12 bg-cyan-900/30 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                         <i class="fas fa-shield-halved text-cyan-400 text-xl"></i>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-3">Enterprise Auth</h3>
                     <p class="text-slate-400 text-sm leading-relaxed">
-                        Sistema de Identity completo com JWT, Blacklisting de Tokens, RBAC e Middlewares de autorização.
+                        Identity completo: JWT, Blacklisting de Tokens, RBAC granular e Middlewares de autorização industrial.
                     </p>
                 </div>
-                <div class="bg-card p-8 rounded-2xl feature-card group">
+
+                <div class="bg-card p-8 rounded-2xl feature-card group border border-slate-800/50 hover:border-cyan-400/30 transition-all text-cyan-50">
+                    <div class="w-12 h-12 bg-cyan-900/30 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-box-open text-cyan-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Smart Asset Engine</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Gestão de ficheiros agnóstica (S3/MinIO). Classificação automática, checksum de integridade e lógica de preview nativa.
+                    </p>
+                </div>
+
+                <div class="bg-card p-8 rounded-2xl feature-card group border border-slate-800/50 hover:border-cyan-400/30 transition-all">
                     <div class="w-12 h-12 bg-cyan-900/30 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                         <i class="fas fa-code text-cyan-400 text-xl"></i>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-3">Scaffolding Magic</h3>
                     <p class="text-slate-400 text-sm leading-relaxed">
-                        Geração de código via templates. Crie Handlers e Repositories em segundos mantendo o rigor técnico.
+                        Geração de código via templates. Crie Handlers e Repositories em segundos mantendo o rigor técnico e padrões da arquitetura.
                     </p>
                 </div>
+
+                <div class="bg-card p-8 rounded-2xl feature-card group border border-slate-800/50 hover:border-cyan-400/30 transition-all">
+                    <div class="w-12 h-12 bg-cyan-900/30 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-docker text-cyan-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Cloud-Native Stack</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Infraestrutura orquestrada: Postgres 16, Redis 7, RabbitMQ e MinIO prontos para rodar em containers isolados e seguros.
+                    </p>
+                </div>
+
+                <div class="bg-card p-8 rounded-2xl feature-card group border border-slate-800/50 hover:border-cyan-400/30 transition-all">
+                    <div class="w-12 h-12 bg-cyan-900/30 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-terminal text-cyan-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Makefile Command Center</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Automação total: Ciclo de vida completo desde migrações Atlas até ao deploy produtivo com um único comando.
+                    </p>
+                </div>
+
             </div>
         </div>
     </section>
@@ -141,16 +175,19 @@
             <div class="flex flex-col md:flex-row gap-16 items-center">
                 <div class="md:w-1/2">
                     <h2 class="text-3xl font-bold text-white mb-6 uppercase tracking-widest text-xs text-cyan-400">The Engineering Inside</h2>
-                    <h3 class="text-4xl font-extrabold text-white mb-8 leading-tight">Arquitetura de 247 ficheiros pronta para escalar.</h3>
+                    <h3 class="text-4xl font-extrabold text-white mb-8 leading-tight">Arquitetura de 254 ficheiros pronta para escalar.</h3>
                     <ul class="space-y-4">
+                        <li class="flex items-center gap-3 text-sm">
+                            <i class="fas fa-check text-cyan-400"></i> <span>Multi-Provider Storage (FileSystem & MinIO/S3)</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-sm">
+                            <i class="fas fa-check text-cyan-400"></i> <span>Containerização Non-Root (Segurança Industrial)</span>
+                        </li>
                         <li class="flex items-center gap-3 text-sm">
                             <i class="fas fa-check text-cyan-400"></i> <span>Transactional Outbox Pattern para RabbitMQ</span>
                         </li>
                         <li class="flex items-center gap-3 text-sm">
                             <i class="fas fa-check text-cyan-400"></i> <span>Migrações declarativas via Atlas HCL</span>
-                        </li>
-                        <li class="flex items-center gap-3 text-sm">
-                            <i class="fas fa-check text-cyan-400"></i> <span>Observability com Zap Logger e Jaeger</span>
                         </li>
                     </ul>
                 </div>
