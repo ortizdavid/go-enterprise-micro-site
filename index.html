@@ -79,8 +79,47 @@
                     <span class="text-[10px] font-mono text-slate-500 uppercase tracking-widest text-right">Enterprise Command Center — Makefile</span>
                 </div>
 
-                <div class="terminal-body p-8 font-mono text-sm leading-relaxed bg-dark/95 text-left min-h-[450px]">
+                <div class="terminal-body p-8 font-mono text-sm leading-relaxed bg-dark/95 text-left">
+                    
+                    <div class="flex gap-4">
+                        <span class="text-cyan-400">➜</span>
+                        <span class="text-white font-bold">make docker-up setup-dev</span>
                     </div>
+                    <div class="mt-2 text-slate-500 italic text-xs"># Orquestrando Containers & Infraestrutura...</div>
+                    <div class="text-slate-400">📦 Container enterprise_db      | <span class="text-green-400">healthy</span></div>
+                    <div class="text-slate-400">📦 Container enterprise_redis   | <span class="text-green-400">healthy</span></div>
+                    <div class="text-slate-400">📦 Container enterprise_minio   | <span class="text-green-400">healthy</span></div>
+                    
+                    <div class="mt-4 text-slate-500 italic text-xs"># Sincronizando Esquema (Atlas) & Seeds...</div>
+                    <div class="text-slate-400">🚀 Applying migrations to <span class="text-yellow-500">core.files</span>... <span class="text-green-400">DONE</span></div>
+                    <div class="text-slate-400">🌱 Running Go seed (Roles, Users, Flags)... <span class="text-green-400">DONE</span></div>
+                    <div class="text-slate-400">📊 Updating SQL Views (file_views)... <span class="text-green-400">DONE</span></div>
+
+                    <div class="flex gap-4 mt-8 border-t border-slate-800 pt-6">
+                        <span class="text-cyan-400">➜</span>
+                        <span class="text-white font-bold">make docker-release</span>
+                    </div>
+                    <div class="mt-2 text-slate-500 italic text-xs"># Full Cycle: Build Multi-stage -> Push to Registry</div>
+                    <div class="text-slate-400">[1/4] Building Docker Image (Go 1.25)... <span class="text-blue-400">OK</span></div>
+                    <div class="text-slate-400">[2/4] Running Migrations (Docker context)... <span class="text-blue-400">OK</span></div>
+                    <div class="text-slate-400">[3/4] Running Seeds (Internal Tool)... <span class="text-blue-400">OK</span></div>
+                    <div class="text-slate-400">[4/4] Pushing <span class="text-cyan-400">ortizdaviddocker/go-enterprise-micro</span>... <span class="text-green-400 font-bold">SUCCESS</span></div>
+
+                    <div class="mt-8 p-4 bg-cyan-950/30 border border-cyan-900/50 rounded-lg">
+                        <div class="flex items-center gap-3">
+                            <span class="flex h-3 w-3 relative">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-3 w-3 bg-cyan-500"></span>
+                            </span>
+                            <span class="text-white font-bold uppercase text-[10px] tracking-widest">Environment Live & Optimized</span>
+                        </div>
+                        <div class="mt-2 text-slate-500 text-[11px]">
+                            API: :3000 | MinIO: :9003 | RabbitMQ: :15672 | Redis: :6380
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 text-cyan-400 font-bold">➜ <span class="cursor-blink"></span></div>
+                </div>
             </div>
         </div>
 
