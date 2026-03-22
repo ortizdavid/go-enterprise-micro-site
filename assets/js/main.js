@@ -1,41 +1,33 @@
+// main.js
+console.log("Script carregado com sucesso!");
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Seleciona especificamente as divs dentro da terminal-body
-    // Usamos querySelectorAll para pegar todos os blocos de texto/comandos
-    const terminalContainer = document.querySelector('.terminal-body');
-    if (!terminalContainer) return; // Segurança caso a classe mude
-
-    const terminalLines = terminalContainer.querySelectorAll(':scope > div');
+    // Seleciona as linhas diretas dentro da terminal-body
+    const container = document.querySelector('.terminal-body');
     
-    // 2. Esconde tudo IMEDIATAMENTE
-    terminalLines.forEach(line => {
+    if (!container) {
+        console.error("Erro: Classe .terminal-body não encontrada no HTML!");
+        return;
+    }
+
+    const lines = container.querySelectorAll(':scope > div');
+    console.log("Linhas encontradas para animar:", lines.length);
+
+    // Estado inicial: Esconder tudo
+    lines.forEach(line => {
         line.style.opacity = '0';
         line.style.transform = 'translateY(10px)';
-        line.style.transition = 'none'; // Remove transição para o "hide" inicial ser instantâneo
+        line.style.transition = 'none'; 
     });
 
-    // 3. Aplica a animação com um pequeno delay para o browser processar o estado inicial
+    // Pequeno delay para garantir que o browser aplicou o 'opacity 0'
     setTimeout(() => {
-        terminalLines.forEach((line, index) => {
+        lines.forEach((line, index) => {
             setTimeout(() => {
                 line.style.transition = 'all 0.4s ease-out';
                 line.style.opacity = '1';
                 line.style.transform = 'translateY(0)';
-            }, index * 400); // 400ms de intervalo entre cada linha
+            }, index * 300); // Velocidade da animação (300ms entre linhas)
         });
-    }, 100); // Delay de 100ms para garantir que o "hide" funcionou
-
-    // 4. Smooth Scroll para os IDs (Features, Arquitetura, etc)
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
+    }, 100);
 });
