@@ -1,8 +1,10 @@
-/* Fonts & Core */
+/* --- Core & Variables --- */
 :root {
     --bg-dark: #020617;
     --bg-card: #0f172a;
     --cyan-primary: #22d3ee;
+    --cyan-dark: #0891b2;
+    --slate-border: #1e293b;
 }
 
 body {
@@ -14,9 +16,15 @@ body {
     font-family: 'JetBrains Mono', monospace;
 }
 
-/* Custom Components */
+/* --- Utility Components --- */
+.gradient-text { 
+    background: linear-gradient(to right, #fff, var(--cyan-primary)); 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+}
+
 .btn-primary {
-    background: linear-gradient(135deg, #0891b2 0%, #0e7490 100%);
+    background: linear-gradient(135deg, var(--cyan-dark) 0%, #0e7490 100%);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -25,13 +33,24 @@ body {
     box-shadow: 0 10px 20px -5px rgba(8, 145, 178, 0.4);
 }
 
+/* --- Terminal & Animations --- */
 .terminal-window {
-    background-color: var(--bg-card);
-    border: 1px solid #1e293b;
+    background: rgba(2, 6, 23, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--slate-border);
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
 }
 
-/* Animations */
+/* Importante: Esta classe permite que o JS controle a entrada */
+.terminal-body > * {
+    opacity: 0; 
+}
+
+@keyframes fadeInUp { 
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 @keyframes blink {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
@@ -41,37 +60,30 @@ body {
     animation: blink 1s step-end infinite;
     display: inline-block;
     width: 8px;
-    height: 15px;
+    height: 16px;
     background-color: var(--cyan-primary);
     margin-left: 4px;
     vertical-align: middle;
 }
 
+/* --- Features --- */
 .feature-card {
     transition: all 0.3s ease;
-    border: 1px solid #1e293b;
+    border: 1px solid var(--slate-border);
+    background-color: rgba(15, 23, 42, 0.3);
 }
 
 .feature-card:hover {
-    border-color: rgba(34, 211, 238, 0.3);
-    transform: translateY(-4px);
+    border-color: rgba(34, 211, 238, 0.4);
+    transform: translateY(-5px);
     background-color: rgba(15, 23, 42, 0.8);
 }
 
-/* Scrollbar Styling */
-::-webkit-scrollbar {
-    width: 8px;
+/* --- Scrollbar --- */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-dark); }
+::-webkit-scrollbar-thumb { 
+    background: var(--slate-border); 
+    border-radius: 10px; 
 }
-
-::-webkit-scrollbar-track {
-    background: var(--bg-dark);
-}
-
-::-webkit-scrollbar-thumb {
-    background: #1e293b;
-    border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #334155;
-}
+::-webkit-scrollbar-thumb:hover { background: #334155; }

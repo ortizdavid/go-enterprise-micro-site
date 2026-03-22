@@ -27,14 +27,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     
-    <style>
-        .gradient-text { background: linear-gradient(to right, #fff, #22d3ee); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .terminal-window { background: rgba(2, 6, 23, 0.95); backdrop-blur: 10px; }
-        .cursor-blink { width: 8px; height: 16px; background-color: #22d3ee; display: inline-block; animation: blink 1s infinite; vertical-align: middle; }
-        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
-        .feature-card:hover { transform: translateY(-5px); border-color: rgba(34, 211, 238, 0.4); }
-        @keyframes fadeInUp { from {opacity: 0; transform: translateY(10px);}to {opacity: 1; transform: translateY(0);}}.terminal-body > * { opacity: 0;}
-    </style>
+    <link rel="stylesheet" href="assets/css/style.css">
+    
 </head>
 
 <body class="bg-dark text-slate-300 antialiased font-sans">
@@ -74,7 +68,7 @@
             </div>
         </div>
 
-       <div class="container mx-auto px-6 mt-20">
+        <div class="container mx-auto px-6 mt-20">
         <div class="max-w-4xl mx-auto terminal-window rounded-xl overflow-hidden shadow-2xl border border-slate-700/50">
             <div class="bg-slate-800/50 px-4 py-3 border-b border-slate-700 flex items-center justify-between">
                 <div class="flex gap-2">
@@ -127,7 +121,7 @@
                 <div class="mt-4 text-cyan-400 font-bold">➜ <span class="cursor-blink"></span></div>
             </div>
         </div>
-      </div>
+        </div>
 
     </header>
 
