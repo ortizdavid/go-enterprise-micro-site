@@ -1,33 +1,30 @@
-// main.js
-console.log("Script carregado com sucesso!");
-
 document.addEventListener('DOMContentLoaded', () => {
-    // Seleciona as linhas diretas dentro da terminal-body
     const container = document.querySelector('.terminal-body');
+    if (!container) return;
+
+    // Selecionamos todos os elementos diretos que queremos animar
+    const elements = container.children;
     
-    if (!container) {
-        console.error("Erro: Classe .terminal-body não encontrada no HTML!");
-        return;
-    }
-
-    const lines = container.querySelectorAll(':scope > div');
-    console.log("Linhas encontradas para animar:", lines.length);
-
-    // Estado inicial: Esconder tudo
-    lines.forEach(line => {
-        line.style.opacity = '0';
-        line.style.transform = 'translateY(10px)';
-        line.style.transition = 'none'; 
+    // Esconder todos inicialmente
+    Array.from(elements).forEach(el => {
+        el.style.opacity = '0';
+        el.style.display = 'none';
     });
 
-    // Pequeno delay para garantir que o browser aplicou o 'opacity 0'
-    setTimeout(() => {
-        lines.forEach((line, index) => {
-            setTimeout(() => {
-                line.style.transition = 'all 0.4s ease-out';
-                line.style.opacity = '1';
-                line.style.transform = 'translateY(0)';
-            }, index * 300); // Velocidade da animação (300ms entre linhas)
-        });
-    }, 100);
+    let delay = 500;
+
+    Array.from(elements).forEach((el, index) => {
+        setTimeout(() => {
+            el.style.display = 'block';
+            el.style.opacity = '1';
+            el.style.animation = 'fadeInUp 0.3s ease-out forwards';
+            
+            // Se for uma linha de progresso [1/4], damos um delay extra para parecer que está a trabalhar
+            if (el.textContent.includes('[') && el.textContent.includes('/4]')) {
+                delay += 400; 
+            }
+        }, delay);
+        
+        delay += 250; // Delay padrão entre linhas
+    });
 });
