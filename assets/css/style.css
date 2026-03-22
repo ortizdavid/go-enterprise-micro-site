@@ -7,6 +7,11 @@
     --slate-border: #1e293b;
 }
 
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Evita que o título da secção fique colado ao topo por causa da navbar sticky */
+}
+
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--bg-dark);
