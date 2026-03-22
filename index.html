@@ -106,40 +106,49 @@
             <div class="text-slate-400">[4/4] Pushing <span class="text-cyan-400">ortizdaviddocker/go-enterprise-micro</span>... <span class="text-green-400 font-bold">SUCCESS</span></div>
 
             <div class="mt-8 p-4 bg-cyan-950/30 border border-cyan-900/50 rounded-lg">
-                <div class="flex items-center gap-3">
-                    <span class="flex h-3 w-3 relative">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-3 w-3 bg-cyan-500"></span>
-                    </span>
-                    <span class="text-white font-bold uppercase text-[10px] tracking-widest">Environment Live & Optimized</span>
-                </div>
-                <div class="mt-2 text-slate-500 text-[11px]">
-                    API: :3000 | MinIO: :9003 | RabbitMQ: :15672 | Redis: :6380
-                </div>
+    <div class="flex items-center gap-3">
+        <span class="flex h-3 w-3 relative">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-3 w-3 bg-cyan-500"></span>
+        </span>
+        <span class="text-white font-bold uppercase text-[10px] tracking-widest">Environment Live & Optimized</span>
+    </div>
+    <div class="mt-2 text-slate-500 text-[11px]">
+        API: :3000 | MinIO: :9003 | RabbitMQ: :15672 | Redis: :6380
+    </div>
 
-                <div class="mt-4 pt-4 border-t border-cyan-900/50">
-                    <div class="text-slate-600 font-mono tracking-tighter opacity-50">──────────────────────────────────────</div>
-                    <div class="flex items-center gap-2 py-1">
-                        <span class="text-green-500 text-xs">✅</span>
-                        <span class="text-white font-bold text-[10px] uppercase">System Online & Optimized (Go 1.25)</span>
-                    </div>
-                    <div class="grid grid-cols-1 gap-1 mt-2 font-mono text-[10px]">
-                        <div class="flex items-center gap-2">
-                            <span class="text-slate-500">📖 Swagger UI:</span>
-                            <span class="text-cyan-400">http://localhost:3000/docs</span>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <span class="text-slate-500">📊 Metrics:</span>
-                            <span class="text-cyan-400">http://localhost:3000/metrics</span>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <span class="text-slate-500">🩺 Health:</span>
-                            <span class="text-cyan-400">http://localhost:3000/health/live</span>
-                        </div>
-                    </div>
-                    <div class="text-slate-600 font-mono tracking-tighter opacity-50 mt-2">──────────────────────────────────────</div>
-                </div>
+    <div class="mt-4 pt-4 border-t border-cyan-900/50">
+        <div class="text-slate-600 font-mono tracking-tighter opacity-50">──────────────────────────────────────</div>
+        <div class="flex items-center gap-2 py-1">
+            <span class="text-green-500 text-xs">✅</span>
+            <span class="text-white font-bold text-[10px] uppercase">System Online & Optimized (Go 1.25)</span>
+        </div>
+        
+        <div class="grid grid-cols-1 gap-1 mt-2 font-mono text-[10px]">
+            <div class="flex items-center gap-2">
+                <span class="text-slate-500 w-24">🚀 Core App:</span>
+                <span class="text-cyan-400">http://localhost:3000</span>
             </div>
+            <div class="flex items-center gap-2">
+                <span class="text-slate-500 w-24">📖 Swagger UI:</span>
+                <span class="text-cyan-400">http://localhost:3000/docs</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="text-slate-500 w-24">📦 Storage:</span>
+                <span class="text-cyan-400">http://localhost:9001 (MinIO Console)</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="text-slate-500 w-24">📊 Metrics:</span>
+                <span class="text-cyan-400">http://localhost:3000/metrics</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="text-slate-500 w-24">🩺 Health:</span>
+                <span class="text-cyan-400">http://localhost:3000/health/live</span>
+            </div>
+        </div>
+        <div class="text-slate-600 font-mono tracking-tighter opacity-50 mt-2">──────────────────────────────────────</div>
+    </div>
+</div>
             
             <div class="mt-4 text-cyan-400 font-bold">➜ <span class="cursor-blink"></span></div>
         </div>
