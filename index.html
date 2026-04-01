@@ -145,6 +145,14 @@
                                     <span class="text-slate-500 w-24">🩺 Health:</span>
                                     <span class="text-cyan-400">http://localhost:3000/health/live</span>
                                 </div>
+                                <div class="flex items-center gap-2">
+                                    <span class="text-slate-500 w-24">📊 Dashboards:</span>
+                                    <span class="text-cyan-400">http://localhost:3002 (Grafana)</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <span class="text-slate-500 w-24">🕵️ Tracing:</span>
+                                    <span class="text-cyan-400">http://localhost:16687 (Jaeger)</span>
+                                </div>
                             </div>
                             
                         </div>
@@ -233,6 +241,14 @@
                 </div>
 
                 <div class="p-8 border border-slate-800 rounded-2xl bg-card/20 feature-card transition-all text-left">
+                    <i class="fas fa-chart-line text-cyan-500 mb-6 text-2xl"></i>
+                    <h4 class="text-white font-bold mb-3 italic">Full-Stack Observability</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Dashboards <strong>Grafana & Prometheus</strong> pré-configurados com métricas de GC, Heap e Goroutines. Tracing distribuído com <strong>Jaeger</strong> integrado via OpenTelemetry.
+                    </p>
+                </div>
+
+                <div class="p-8 border border-slate-800 rounded-2xl bg-card/20 feature-card transition-all text-left">
                     <i class="fas fa-terminal text-cyan-500 mb-6 text-2xl"></i>
                     <h4 class="text-white font-bold mb-3 italic">Scaffolding Magic</h4>
                     <p class="text-slate-400 text-sm leading-relaxed">Geradores de código para Handlers e Repositories. Mantenha o <strong>rigor técnico e padrões da arquitetura</strong> sem esforço manual.</p>
@@ -260,6 +276,7 @@
                     <p>├── <span class="text-white">internal/core/dtos</span> <span class="text-slate-700 italic"># Strictly Validated</span></p>
                     <p>├── <span class="text-white">internal/core/repositories</span> <span class="text-slate-700 italic"># SQL/CQRS Logic</span></p>
                     <p>├── <span class="text-white">internal/infra/messaging</span> <span class="text-slate-700 italic"># RabbitMQ Adapters</span></p>
+                    <p>├── <span class="text-white">observability/</span> <span class="text-slate-700 italic"># Prometheus, Grafana & Jaeger Config</span></p>
                     <p>└── <span class="text-white">Makefile</span> <span class="text-slate-700 italic"># The Industrial Heart</span></p>
                 </div>
             </div>
