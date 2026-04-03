@@ -275,18 +275,28 @@
                     <li class="flex items-center gap-3 text-sm italic"><i class="fas fa-check text-cyan-400"></i> <span>Clean Architecture com separação rigorosa de domínios</span></li>
                     <li class="flex items-center gap-3 text-sm italic"><i class="fas fa-check text-cyan-400"></i> <span>Migrações declarativas via Atlas HCL</span></li>
                     <li class="flex items-center gap-3 text-sm italic"><i class="fas fa-check text-cyan-400"></i> <span>Containerização Non-Root (Segurança Industrial)</span></li>
-                    <li class="flex items-center gap-3 text-sm italic"><i class="fas fa-check text-cyan-400"></i> <span>Postgres 16, Redis 7, RabbitMQ e MinIO Stack</span></li>
+                    <li class="flex items-center gap-3 text-sm italic"><i class="fas fa-check text-cyan-400"></i> <span>Postgres 16, Redis 7, RabbitMQ, MinIO e Observability Stack</span></li>
                 </ul>
             </div>
-            <div class="md:w-1/2 bg-dark p-6 rounded-xl border border-slate-800 font-mono text-[11px] text-slate-500 overflow-x-auto shadow-inner">
+            <div class="md:w-1/2 bg-slate-900 p-6 rounded-xl border border-slate-700 font-mono text-[11px] text-slate-400 overflow-x-auto shadow-2xl">
                 <p class="text-cyan-400 mb-2">// Enterprise Directory Structure</p>
                 <div class="space-y-1">
-                    <p>├── <span class="text-white">cmd/api</span> <span class="text-slate-700 italic"># Entrypoint</span></p>
-                    <p>├── <span class="text-white">internal/core/dtos</span> <span class="text-slate-700 italic"># Strictly Validated</span></p>
-                    <p>├── <span class="text-white">internal/core/repositories</span> <span class="text-slate-700 italic"># SQL/CQRS Logic</span></p>
-                    <p>├── <span class="text-white">internal/infra/messaging</span> <span class="text-slate-700 italic"># RabbitMQ Adapters</span></p>
-                    <p>├── <span class="text-white">observability/</span> <span class="text-slate-700 italic"># Prometheus, Grafana & Jaeger Config</span></p>
-                    <p>└── <span class="text-white">Makefile</span> <span class="text-slate-700 italic"># The Industrial Heart</span></p>
+                    <p>├── <span class="text-white">cmd/</span> <span class="text-slate-600 italic"># API, Workers & Seeders</span></p>
+                    <p>├── <span class="text-white">internal/core/</span> <span class="text-slate-600 italic"># Handlers, Svc, Repos, Models</span></p>
+                    <p>├── <span class="text-white">internal/contracts/</span> <span class="text-slate-600 italic"># Decoupled Interfaces</span></p>
+                    <p>├── <span class="text-white">internal/infra/</span> <span class="text-slate-600 italic"># Messaging, DB, Obs, Cache</span></p>
+                    <p>├── <span class="text-white">pkg/</span> <span class="text-slate-600 italic"># Shared SDK (Auth, i18n, Storage)</span></p>
+                    <p>├── <span class="text-white">database/</span> <span class="text-slate-600 italic"># Atlas Migrations & SQL Views</span></p>
+                    <p>├── <span class="text-white">observability/</span> <span class="text-slate-600 italic"># Grafana, Prometheus & Jaeger</span></p>
+                    <p>├── <span class="text-white">scaffold/</span> <span class="text-slate-600 italic"># Code Generation Engine</span></p>
+                    <p>└── <span class="text-white">Makefile</span> <span class="text-slate-400 font-bold italic"># The Industrial Heart</span></p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-slate-800">
+                    <p class="text-emerald-400 mb-1">$ make help</p>
+                    <p class="text-slate-500">Usage: make [target]</p>
+                    <p class="text-slate-500">  <span class="text-white">docker-up</span>    Launch full stack (DB, MQ, Obs)</p>
+                    <p class="text-slate-500">  <span class="text-white">migrate</span>      Sync schema via Atlas HCL</p>
+                    <p class="text-slate-500">  <span class="text-white">scaffold</span>     Generate new domain module</p>
                 </div>
             </div>
         </div>
@@ -485,7 +495,7 @@ s.Obs.RecordOutcome(ctx, <span class="text-yellow-500">"create"</span>, err)</pr
         <div class="container mx-auto px-6">
             <div class="flex flex-wrap justify-center gap-8 mb-10 text-[10px] font-mono tracking-widest uppercase font-bold">
                 <a href="mailto:ortizaad1994@gmail.com" class="hover:text-cyan-400 transition flex items-center gap-2"><i class="fas fa-envelope text-cyan-600"></i> ortizaad1994@gmail.com</a>
-                <a href="https://linkedin.com/in/ortizdavid" target="_blank" class="hover:text-cyan-400 transition flex items-center gap-2"><i class="fab fa-linkedin text-cyan-600"></i> linkedin.com/in/ortiz-david</a>
+                <a href="https://linkedin.com/in/ortiz-david" target="_blank" class="hover:text-cyan-400 transition flex items-center gap-2"><i class="fab fa-linkedin text-cyan-600"></i> linkedin.com/in/ortiz-david</a>
                 <a href="tel:+244936166699" class="hover:text-cyan-400 transition flex items-center gap-2"><i class="fas fa-phone text-cyan-600"></i> (+244) 936 166 699</a>
             </div>
             <p class="text-slate-600 text-[10px] font-mono uppercase tracking-[0.4em]">&copy; 2026 ORTIZ DAVID. ENGINEERED FOR HIGH-PERFORMANCE BACKENDS.</p>
