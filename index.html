@@ -366,31 +366,34 @@ s.Obs.RecordOutcome(ctx, <span class="text-yellow-500">"create"</span>, err)</pr
             <div class="flex flex-col lg:flex-row-reverse gap-16 items-center">
                 <div class="lg:w-1/2 text-left">
                     <h2 class="text-cyan-400 text-xs uppercase tracking-[0.3em] font-bold mb-4">Industrial Delivery</h2>
-                    <h3 class="text-3xl md:text-5xl font-extrabold text-white mb-6 italic">CI/CD de Classe Mundial.</h3>
+                    
+                    <h3 class="text-3xl md:text-5xl font-extrabold text-white mb-6 italic">Deploy Sem Fronteiras.</h3>
                     <p class="text-slate-400 mb-8 leading-relaxed">
-                        Não perca tempo a configurar pipelines. O template inclui um workflow do <strong>GitHub Actions</strong> otimizado para Go 1.26.2 que garante que nenhum código vulnerável chega à produção.
+                        Seja na Cloud ou no seu próprio Data Center. O template entrega configurações prontas para <strong>GitHub Actions</strong>, <strong>Jenkins</strong> e <strong>Kubernetes</strong>, permitindo que a sua infraestrutura escale com o negócio.
                     </p>
                     
                     <div class="space-y-4">
                         <div class="flex items-start gap-4 p-4 bg-slate-900/40 border border-slate-800 rounded-xl hover:border-cyan-900/50 transition-colors">
-                            <div class="text-cyan-500 mt-1"><i class="fas fa-shield-check"></i></div>
+                            <div class="text-cyan-500 mt-1"><i class="fas fa-server"></i></div>
                             <div>
-                                <h5 class="text-white font-bold text-sm uppercase italic">Security Gate (Govulncheck)</h5>
-                                <p class="text-slate-500 text-xs">Análise profunda de vulnerabilidades em todas as dependências antes de cada build.</p>
+                                <h5 class="text-white font-bold text-sm uppercase italic">On-Premise & Jenkins Ready</h5>
+                                <p class="text-slate-500 text-xs">Pipelines industriais para servidores privados e instâncias Jenkins com gestão de recursos otimizada.</p>
                             </div>
                         </div>
+
                         <div class="flex items-start gap-4 p-4 bg-slate-900/40 border border-slate-800 rounded-xl hover:border-cyan-900/50 transition-colors">
                             <div class="text-cyan-500 mt-1"><i class="fas fa-box-open"></i></div>
                             <div>
                                 <h5 class="text-white font-bold text-sm uppercase italic">Multi-Stage Docker Build</h5>
-                                <p class="text-slate-500 text-xs">Builds paralelos para API, Worker e Cronjobs, gerando imagens ultra-leves e seguras (Non-Root).</p>
+                                <p class="text-slate-500 text-xs">Builds paralelos para API, Worker e Cronjobs. Imagens ultra-leves e seguras (Non-Root).</p>
                             </div>
                         </div>
+
                         <div class="flex items-start gap-4 p-4 bg-slate-900/40 border border-slate-800 rounded-xl hover:border-cyan-900/50 transition-colors">
-                            <div class="text-cyan-500 mt-1"><i class="fas fa-server"></i></div>
+                            <div class="text-cyan-500 mt-1"><i class="fas fa-cubes"></i></div>
                             <div>
-                                <h5 class="text-white font-bold text-sm uppercase italic">On-Premise Ready (Jenkins)</h5>
-                                <p class="text-slate-500 text-xs">Jenkinsfile industrial incluído para deploys em servidores privados com gestão de recursos otimizada.</p>
+                                <h5 class="text-white font-bold text-sm uppercase italic">Kubernetes Orchestration</h5>
+                                <p class="text-slate-500 text-xs">Manifestos prontos para alta disponibilidade e escalabilidade horizontal automática.</p>
                             </div>
                         </div>
                     </div>
@@ -399,29 +402,31 @@ s.Obs.RecordOutcome(ctx, <span class="text-yellow-500">"create"</span>, err)</pr
                 <div class="lg:w-1/2 w-full">
                     <div class="terminal-window rounded-xl overflow-hidden shadow-2xl border border-slate-700/50">
                         <div class="bg-slate-800/50 px-4 py-2 border-b border-slate-700 flex items-center justify-between">
-                            <span class="text-[10px] font-mono text-slate-400 uppercase tracking-widest italic">GitHub Actions Workflow</span>
+                            <span class="text-[10px] font-mono text-slate-400 uppercase tracking-widest italic">Hybrid Deployment Engine</span>
                             <div class="flex gap-1.5">
                                 <div class="w-2 h-2 rounded-full bg-green-500"></div>
                             </div>
                         </div>
                         <div class="p-6 bg-dark/95 font-mono text-[11px] leading-relaxed">
-                            <div class="flex items-center gap-3 mb-4">
-                                <span class="text-green-500 font-bold">✓</span>
-                                <span class="text-white">Quality Gate (Go 1.26.2)</span>
-                                <span class="text-slate-600 ml-auto">2m 45s</span>
+                            <div class="flex items-center gap-3 mb-2">
+                                <span class="text-cyan-500 font-bold">$</span>
+                                <span class="text-white">./deploy/on-premise/setup.sh --environment=prod</span>
                             </div>
                             <div class="flex items-center gap-3 mb-4">
                                 <span class="text-green-500 font-bold">✓</span>
-                                <span class="text-white">Vulnerability Scan (0 found)</span>
-                                <span class="text-slate-600 ml-auto">1m 12s</span>
+                                <span class="text-white">Orchestrating services (API, Worker, Redis)</span>
                             </div>
                             <div class="flex items-center gap-3 mb-4">
                                 <span class="text-green-500 font-bold">✓</span>
-                                <span class="text-white">Docker Build (Multi-service)</span>
-                                <span class="text-slate-600 ml-auto">5m 20s</span>
+                                <span class="text-white">Setting up Prometheus Monitoring</span>
+                            </div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="text-green-500 font-bold">✓</span>
+                                <span class="text-white">Healthcheck: Services are IDEMPOTENT & Online</span>
                             </div>
                             <div class="flex items-center gap-3 text-cyan-400 font-bold border-t border-slate-800 pt-4">
-                                <span>🚀 Pushed to Registry: ortizdaviddocker/api:latest</span>
+                                <span>🚀 STACK READY: http://localhost:8080</span>
+                                <span class="text-slate-600 ml-auto">SUCCESS</span>
                             </div>
                         </div>
                     </div>
