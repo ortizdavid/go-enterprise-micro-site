@@ -600,6 +600,25 @@ s.Obs.RecordOutcome(ctx, <span class="text-yellow-500">"create"</span>, err)</pr
                     <h4 class="text-white font-bold mb-2">Como funcionam as atualizações?</h4>
                     <p class="text-slate-400 text-sm italic">Como é uma licença vitalícia, terás acesso a todas as correções de bugs e atualizações de segurança que forem lançadas no repositório core.</p>
                 </div>
+                <div class="p-6 border border-slate-800 rounded-xl bg-card/20">
+                    <h4 class="text-white font-bold mb-2">O sistema suporta Multi-tenancy nativo?</h4>
+                    <p class="text-slate-400 text-sm italic">Sim. O isolamento lógico de dados é feito ao nível do motor de base de dados através de injeção automática de contexto, garantindo segurança total entre diferentes clientes ou organizações no mesmo banco.</p>
+                </div>
+
+                <div class="p-6 border border-slate-800 rounded-xl bg-card/20">
+                    <h4 class="text-white font-bold mb-2">Como é feita a gestão de migrações?</h4>
+                    <p class="text-slate-400 text-sm italic">Utilizamos o Atlas HCL para migrações declarativas. O esquema da base de dados é versionado como código, permitindo que a infraestrutura acompanhe o deploy de forma segura e automatizada via Makefile.</p>
+                </div>
+
+                <div class="p-6 border border-slate-800 rounded-xl bg-card/20">
+                    <h4 class="text-white font-bold mb-2">O template está pronto para Alta Disponibilidade (HA)?</h4>
+                    <p class="text-slate-400 text-sm italic">Absolutamente. O sistema é Stateless por design, inclui configurações de Graceful Shutdown e manifestos prontos para Kubernetes, permitindo escalonamento horizontal sem perda de dados ou interrupção de processos.</p>
+                </div>
+
+                <div class="p-6 border border-slate-800 rounded-xl bg-card/20">
+                    <h4 class="text-white font-bold mb-2">Posso usar este template em projetos comerciais?</h4>
+                    <p class="text-slate-400 text-sm italic">Sim. A licença permite o uso em projetos ilimitados, sejam eles pessoais ou para clientes finais. Não existem taxas recorrentes ou royalties.</p>
+                </div>
             </div>
         </div>
     </section>
