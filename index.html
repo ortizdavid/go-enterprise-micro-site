@@ -264,6 +264,13 @@
                     <h4 class="text-white font-bold mb-3 italic">Scaffolding Magic</h4>
                     <p class="text-slate-400 text-sm leading-relaxed">Geradores de código para Handlers e Repositories. Mantenha o <strong>rigor técnico e padrões da arquitetura</strong> sem esforço manual.</p>
                 </div>
+
+                <div class="p-8 border border-slate-800 rounded-2xl bg-card/20 feature-card transition-all text-left">
+                    <i class="fas fa-plug-circle-xmark text-cyan-500 mb-6 text-2xl"></i>
+                    <h4 class="text-white font-bold mb-3 italic">Graceful Degradation</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">Arquitetura resiliente com <strong>No-Op Fallback</strong>. Se o Redis ou RabbitMQ falharem, o sistema mantém-se online em modo degradado, evitando crashes em cascata.</p>
+                </div>
+
             </div>
         </div>
     </section>
@@ -534,6 +541,13 @@ s.Obs.RecordOutcome(ctx, <span class="text-yellow-500">"create"</span>, err)</pr
                             <div>
                                 <h5 class="text-white font-bold text-sm uppercase italic">Smart Idempotency</h5>
                                 <p class="text-slate-500 text-xs mt-1">Proteção contra processamento duplicado em cenários de retry, utilizando o nosso middleware de rastreio de estado.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="mt-1 bg-cyan-900/30 p-2 rounded border border-cyan-600/30 text-cyan-400"><i class="fas fa-heart-pulse"></i></div>
+                            <div>
+                                <h5 class="text-white font-bold text-sm uppercase italic">Self-Healing & No-Op</h5>
+                                <p class="text-slate-500 text-xs mt-1">O sistema detecta falhas de infraestrutura no boot e ativa fallbacks inteligentes, garantindo que a API continue a servir tráfego vital mesmo sob stress.</p>
                             </div>
                         </div>
                     </div>
