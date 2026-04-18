@@ -1,3 +1,4 @@
 title: Go Enterprise Micro
 description: Industrial-Grade Template for Go Microservices
-theme: jekyll-theme-minimal # Ou deixa vazio para o teu próprio CSS
+theme: jekyll-theme-minimal 
+exclude: [README.md, _pocs]

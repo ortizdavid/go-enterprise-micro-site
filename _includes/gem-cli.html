@@ -1,0 +1,74 @@
+<section id="gem-cli" class="py-24 bg-dark border-t border-slate-800 overflow-hidden">
+    <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row gap-16 items-center">
+            
+            <div class="md:w-1/2 w-full order-2 md:order-1">
+                <div class="terminal-window rounded-xl overflow-hidden shadow-2xl border border-slate-700/50 bg-black/40">
+                    <div class="bg-slate-800/50 px-4 py-2 border-b border-slate-700 flex items-center justify-between">
+                        <div class="flex gap-1.5">
+                            <div class="w-2.5 h-2.5 rounded-full bg-red-500/40"></div>
+                            <div class="w-2.5 h-2.5 rounded-full bg-yellow-500/40"></div>
+                            <div class="w-2.5 h-2.5 rounded-full bg-green-500/40"></div>
+                        </div>
+                        <span class="text-[9px] font-mono text-slate-500 uppercase tracking-widest">GEM-CLI — Scaffold Engine</span>
+                    </div>
+                    
+                    <div class="p-6 font-mono text-[12px] leading-relaxed">
+                        <div class="flex gap-3">
+                            <span class="text-cyan-400">➜</span>
+                            <span class="text-white">./gem-cli entity finance/invoice</span>
+                        </div>
+                        
+                        <div class="mt-3 text-cyan-500/80 italic text-[11px]"># Analisando domínio e injetando boilerplate...</div>
+                        
+                        <div class="space-y-1 mt-2">
+                            <p class="text-slate-400">🏗️  Adding entity <span class="text-white">'Invoice'</span> inside folder <span class="text-white">'finance'</span>...</p>
+                            <p class="text-slate-500">✅ Generated: <span class="text-emerald-400">internal/core/models/invoice_model.go</span></p>
+                            <p class="text-slate-500">✅ Generated: <span class="text-emerald-400">internal/core/dtos/finance/invoice_requests.go</span></p>
+                            <p class="text-slate-500">✅ Generated: <span class="text-emerald-400">internal/core/repositories/finance/invoice_repo.go</span></p>
+                            <p class="text-slate-500">✅ Generated: <span class="text-emerald-400">internal/core/handlers/finance/invoice_handler.go</span></p>
+                            <p class="text-slate-500">⚠️  Skipped: <span class="text-yellow-500">internal/rpc/finance/types.go (Exists)</span></p>
+                        </div>
+
+                        <div class="mt-4 p-3 bg-emerald-950/20 border border-emerald-900/30 rounded">
+                            <p class="text-emerald-400 font-bold text-[10px] uppercase tracking-tighter">🚀 Scaffold Finalizado com Sucesso!</p>
+                            <p class="text-slate-500 text-[10px] mt-1">Próximos passos: Registe os services no container e defina as rotas.</p>
+                        </div>
+                        
+                        <div class="mt-4 text-cyan-400 font-bold">➜ <span class="cursor-blink"></span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:w-1/2 text-left order-1 md:order-2">
+                <h2 class="text-cyan-400 text-xs uppercase tracking-widest font-bold mb-4">Productivity at Scale</h2>
+                <h3 class="text-4xl font-extrabold text-white mb-6 leading-tight">
+                    Crie domínios completos <br> <span class="gradient-text">em menos de 2 segundos.</span>
+                </h3>
+                <p class="text-slate-400 mb-8 leading-relaxed italic">
+                    O <b>GEM-CLI</b> é o cérebro do scaffold. Desenvolvido para eliminar o erro humano e o boilerplate repetitivo, ele garante que cada nova entidade siga rigorosamente as regras da sua arquitetura.
+                </p>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="border-l-2 border-cyan-600 pl-4">
+                        <h4 class="text-white font-bold text-sm mb-1 uppercase">Zero Boilerplate</h4>
+                        <p class="text-slate-500 text-xs">Geração automática de Handlers, Services, Repositories e DTOs.</p>
+                    </div>
+                    <div class="border-l-2 border-slate-700 pl-4">
+                        <h4 class="text-white font-bold text-sm mb-1 uppercase">Smart Overwrite</h4>
+                        <p class="text-slate-500 text-xs">Inteligência para não sobrescrever ficheiros globais de configuração.</p>
+                    </div>
+                    <div class="border-l-2 border-slate-700 pl-4">
+                        <h4 class="text-white font-bold text-sm mb-1 uppercase">Modular Design</h4>
+                        <p class="text-slate-500 text-xs">Organização automática por pastas de domínio (Módulos).</p>
+                    </div>
+                    <div class="border-l-2 border-cyan-600 pl-4">
+                        <h4 class="text-white font-bold text-sm mb-1 uppercase">Industrial Code</h4>
+                        <p class="text-slate-500 text-xs">Código gerado com suporte nativo a Tracing e Observabilidade.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
