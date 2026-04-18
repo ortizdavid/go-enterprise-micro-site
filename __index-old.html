@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="pt-PT" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go Enterprise Micro | Industrial-Grade Template</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#020617',
+                        card: '#0f172a',
+                        cyan: {
+                            400: '#22d3ee',
+                            600: '#0891b2',
+                            900: '#164e63',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+</head>
+
+<body class="bg-dark text-slate-300 antialiased font-sans">
+
+    <nav class="sticky top-0 z-50 bg-dark/80 backdrop-blur-md border-b border-slate-800">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-cyan-600 rounded flex items-center justify-center text-white font-bold">G</div>
+                <span class="text-white font-bold tracking-tight uppercase text-sm italic">Go Enterprise <span class="text-cyan-400">Micro</span></span>
+            </div>
+            <div class="hidden md:flex gap-8 text-xs font-bold uppercase tracking-widest">
+                <a href="#advantages" class="hover:text-cyan-400 transition-colors">Vantagens</a>
+                <a href="#features" class="hover:text-cyan-400 transition-colors">Features</a>
+                <a href="#multi-tenancy" class="hover:text-cyan-400 transition-colors">Multi Tenancy</a>
+                <a href="#architecture" class="hover:text-cyan-400 transition-colors">Arquitetura</a>
+                <a href="#observability" class="hover:text-cyan-400 transition-colors">Observabilidade</a>
+                <a href="#cicd" class="hover:text-cyan-400 transition-colors">CI & CD</a>
+                <a href="#faq" class="hover:text-cyan-400 transition-colors">FAQ</a>
+                <a href="#reliability" class="hover:text-cyan-400 transition-colors">Reliability</a>
+                <a href="#pricing" class="bg-cyan-600/10 text-cyan-400 px-4 py-1 rounded-full border border-cyan-600/30 hover:bg-cyan-600 hover:text-white transition-all">Obter Acesso</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="relative pt-20 pb-32 overflow-hidden border-b border-slate-900">
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 tracking-tighter leading-none">
+                Microserviços <span class="gradient-text">Industrial-Grade</span> <br> prontos para produção hoje.
+            </h1>
+            <p class="max-w-2xl mx-auto text-lg text-slate-400 mb-10 leading-relaxed">
+                Elimine 80% do boilerplate com um template proprietário de engenharia sénior. 
+                Focado em <b>performance, auditoria e resiliência distribuída</b>.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#pricing" class="bg-cyan-600 hover:bg-cyan-500 text-white px-10 py-4 rounded-lg font-bold text-sm uppercase tracking-widest transition-all shadow-lg shadow-cyan-900/20">
+                    Comprar Licença — $199
+                </a>
+                <a href="#architecture" class="bg-slate-800 hover:bg-slate-700 text-white px-10 py-4 rounded-lg font-bold text-sm uppercase tracking-widest transition-all">
+                    Explorar Estrutura
+                </a>
+            </div>
+        </div>
+
+        <div id="console" class="container mx-auto px-6 mt-20">
+            <div class="max-w-4xl mx-auto terminal-window rounded-xl overflow-hidden shadow-2xl border border-slate-700/50">
+                <div class="bg-slate-800/50 px-4 py-3 border-b border-slate-700 flex items-center justify-between">
+                    <div class="flex gap-2">
+                        <div class="w-3 h-3 rounded-full bg-red-500/50"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500/50"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-500/50"></div>
+                    </div>
+                    <span class="text-[10px] font-mono text-slate-500 uppercase tracking-widest text-right">Enterprise Command Center — Makefile</span>
+                </div>
+
+                <div class="terminal-body p-8 font-mono text-sm leading-relaxed bg-dark/95 text-left">
+                
+                    <div class="flex gap-4">
+                        <span class="text-cyan-400">➜</span>
+                        <span class="text-white font-bold">make docker-up setup-dev</span>
+                    </div>
+                    <div class="mt-2 text-slate-500 italic text-xs"># Orquestrando Containers & Infraestrutura...</div>
+                    <div class="text-slate-400">📦 Container enterprise_db      | <span class="text-green-400">healthy</span></div>
+                    <div class="text-slate-400">📦 Container enterprise_redis   | <span class="text-green-400">healthy</span></div>
+                    <div class="text-slate-400">📦 Container enterprise_minio   | <span class="text-green-400">healthy</span></div>
+                    <div class="text-slate-400">📦 Container enterprise_jaeger  | <span class="text-green-400">healthy</span></div>
+                    <div class="text-slate-400">📦 Container enterprise_api     | <span class="text-green-400">healthy</span></div>
+                    <div class="text-slate-400">📦 Container enterprise_seed    | <span class="text-green-400">healthy</span></div>
+                    
+                    <div class="mt-4 text-slate-500 italic text-xs"># Sincronizando Esquema (Atlas) & Seeds...</div>
+                    <div class="text-slate-400">🚀 Applying migrations to <span class="text-yellow-500">core.files</span>... <span class="text-green-400">DONE</span></div>
+                    <div class="text-slate-400">🌱 Running Go seed (Roles, Users, Flags)... <span class="text-green-400">DONE</span></div>
+                    <div class="text-slate-400">📊 Updating SQL Views (file_views)... <span class="text-green-400">DONE</span></div>
+
+                    <div class="flex gap-4 mt-8 border-t border-slate-800 pt-6">
+                        <span class="text-cyan-400">➜</span>
+                        <span class="text-white font-bold">make docker-release</span>
+                    </div>
+                    <div class="mt-2 text-slate-500 italic text-xs"># Full Cycle: Build Multi-stage -> Push to Registry</div>
+                    <div class="text-slate-400">[1/4] Building Docker Image (Go 1.25)... <span class="text-blue-400">OK</span></div>
+                    <div class="text-slate-400">[2/4] Running Migrations (Docker context)... <span class="text-blue-400">OK</span></div>
+                    <div class="text-slate-400">[3/4] Running Seeds (Internal Tool)... <span class="text-blue-400">OK</span></div>
+                    <div class="text-slate-400">[4/4] Pushing <span class="text-cyan-400">ortizdaviddocker/go-enterprise-micro</span>... <span class="text-green-400 font-bold">SUCCESS</span></div>
+
+                    <div class="mt-8 p-4 bg-cyan-950/30 border border-cyan-900/50 rounded-lg">
+                        <div class="flex items-center gap-3">
+                            <span class="flex h-3 w-3 relative">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-3 w-3 bg-cyan-500"></span>
+                            </span>
+                            <span class="text-white font-bold uppercase text-[10px] tracking-widest">Environment Live & Optimized</span>
+                        </div>
+                        <div class="mt-2 text-slate-500 text-[11px]">
+                            API: :3000 | MinIO: :9003 | RabbitMQ: :15672 | Redis: :6380
+                        </div>
+
+                        <div class="mt-4 pt-4 border-t border-cyan-900/50">
+                        
+                            <div class="flex items-center gap-2 py-1">
+                                <span class="text-green-500 text-xs">✅</span>
+                                <span class="text-white font-bold text-[10px] uppercase">System Online & Optimized (Go 1.25)</span>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 gap-1 mt-2 font-mono text-[10px]">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-slate-500 w-24">🚀 Core App:</span>
+                                    <span class="text-cyan-400">http://localhost:3000</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <span class="text-slate-500 w-24">📖 Swagger UI:</span>
+                                    <span class="text-cyan-400">http://localhost:3000/docs</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <span class="text-slate-500 w-24">🩺 Health:</span>
+                                    <span class="text-cyan-400">http://localhost:3000/health/live</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <span class="text-slate-500 w-24">📦 Storage:</span>
+                                    <span class="text-cyan-400">http://localhost:9001 (MinIO Console)</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <span class="text-slate-500 w-24">📊 Metrics:</span>
+                                    <span class="text-cyan-400">http://localhost:3000/metrics</span>
+                                </div>
+                                
+                                <div class="flex items-center gap-2">
+                                    <span class="text-slate-500 w-24">📊 Dashboards:</span>
+                                    <span class="text-cyan-400">http://localhost:3002 (Grafana)</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <span class="text-slate-500 w-24">🕵️ Tracing:</span>
+                                    <span class="text-cyan-400">http://localhost:16687 (Jaeger - Live Spans)</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-green-400/80 animate-pulse">
+                                    <span class="text-slate-500 w-24">📈 Telemetry:</span>
+                                    <span>Otel Collector Active (Prometheus + Jaeger)</span>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                                        
+                    <div class="mt-4 text-cyan-400 font-bold">➜ <span class="cursor-blink"></span></div>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+    <section id="advantages" class="py-24 bg-dark">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-cyan-400 text-xs uppercase tracking-[0.3em] font-bold mb-4">Strategic Investment</h2>
+                <h3 class="text-3xl md:text-5xl font-extrabold text-white italic">O custo real de construir do zero.</h3>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
+                <div class="p-8 border border-slate-800 rounded-2xl bg-card/30">
+                    <div class="text-cyan-600 mb-4 text-2xl"><i class="fas fa-calculator"></i></div>
+                    <h4 class="text-white font-bold mb-3 uppercase text-xs tracking-widest">Elimine o Setup</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">Um Lead Dev gasta em média 60h para montar esta infraestrutura. Poupe mais de <strong class="text-white">$3.000</strong> em salários logo na primeira semana.</p>
+                </div>
+                <div class="p-8 border border-slate-800 rounded-2xl bg-card/30">
+                    <div class="text-cyan-600 mb-4 text-2xl"><i class="fas fa-shield-virus"></i></div>
+                    <h4 class="text-white font-bold mb-3 uppercase text-xs tracking-widest">Segurança Nativa</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">Decisões erradas no dia 1 causam refactoring caro no dia 100. Use padrões testados (Outbox, CQRS) desde o início.</p>
+                </div>
+                <div class="p-8 border border-slate-800 rounded-2xl bg-card/30">
+                    <div class="text-cyan-600 mb-4 text-2xl"><i class="fas fa-bolt"></i></div>
+                    <h4 class="text-white font-bold mb-3 uppercase text-xs tracking-widest">Time-to-Market</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">Não perca 1 mês discutindo estrutura de pastas. Clone, configure o .env e escreva a lógica que realmente gera receita.</p>
+                </div>
+                <div class="p-8 border border-slate-800 rounded-2xl bg-card/30">
+                    <div class="text-cyan-600 mb-4 text-2xl"><i class="fas fa-users-gear"></i></div>
+                    <h4 class="text-white font-bold mb-3 uppercase text-xs tracking-widest">Padronização</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">Facilite a entrada de novos devs. Com uma estrutura clara e Makefile automatizado, a equipa entra no ritmo em horas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="py-24 bg-slate-900/10 border-t border-slate-800">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-cyan-400 text-xs uppercase tracking-[0.3em] font-bold mb-4">Core Capabilities</h2>
+                <h3 class="text-3xl md:text-5xl font-extrabold text-white italic">Engenharia sem compromissos.</h3>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 border border-slate-800 rounded-2xl bg-card/20 feature-card transition-all text-left">
+                    <i class="fas fa-microchip text-cyan-500 mb-6 text-2xl"></i>
+                    <h4 class="text-white font-bold mb-3 italic">CQRS Primordial</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">Segregação total entre leitura e escrita. Repositórios otimizados para <strong>performance máxima em SQL</strong> e Cache Sidecar em Redis.</p>
+                </div>
+
+                <div class="p-8 border border-slate-800 rounded-2xl bg-card/20 feature-card transition-all text-left">
+                    <i class="fas fa-key text-cyan-500 mb-6 text-2xl"></i>
+                    <h4 class="text-white font-bold mb-3 italic">Enterprise Auth</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">Identity completo: JWT Stateless, Blacklisting via Redis, RBAC granular e Middlewares de autorização industrial.</p>
+                </div>
+
+                <div class="p-8 border border-slate-800 rounded-2xl bg-card/20 feature-card transition-all text-left">
+                    <i class="fas fa-envelope-open-text text-cyan-500 mb-6 text-2xl"></i>
+                    <h4 class="text-white font-bold mb-3 italic">Transactional Outbox</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">Resiliência absoluta para RabbitMQ. Garanta que eventos distribuídos nunca sejam perdidos, mesmo em falhas de rede.</p>
+                </div>
+
+                <div class="p-8 border border-slate-800 rounded-2xl bg-card/20 feature-card transition-all text-left">
+                    <i class="fas fa-gears text-cyan-500 mb-6 text-2xl"></i>
+                    <h4 class="text-white font-bold mb-3 italic">Worker Manager Pro</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">Gestão nativa de tarefas em background com <strong>Graceful Shutdown</strong>. Orquestração de consumidores RabbitMQ com auto-recovery e monitorização de saúde.</p>
+                </div>
+
+                <div class="p-8 border border-slate-800 rounded-2xl bg-card/20 feature-card transition-all text-left">
+                    <i class="fas fa-file-shield text-cyan-500 mb-6 text-2xl"></i>
+                    <h4 class="text-white font-bold mb-3 italic">Smart Asset Engine</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">Gestão agnóstica (S3/MinIO). Classificação automática, checksum de integridade e <strong>lógica de preview nativa</strong>.</p>
+                </div>
+
+                <div class="p-8 border border-slate-800 rounded-2xl bg-card/20 feature-card transition-all text-left">
+                    <i class="fas fa-vial text-cyan-500 mb-6 text-2xl"></i>
+                    <h4 class="text-white font-bold mb-3 italic">Observability Ready</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">Logs estruturados (Slog/Zap) e Healthchecks integrados prontos para Kubernetes, Docker Swarm ou Bare Metal.</p>
+                </div>
+
+                <div class="p-8 border border-slate-800 rounded-2xl bg-card/20 feature-card transition-all text-left">
+                    <i class="fas fa-chart-line text-cyan-500 mb-6 text-2xl"></i>
+                    <h4 class="text-white font-bold mb-3 italic">Full-Stack Observability</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Dashboards <strong>Grafana & Prometheus</strong> pré-configurados com métricas de GC, Heap e Goroutines. Tracing distribuído com <strong>Jaeger</strong> integrado via OpenTelemetry.
+                    </p>
+                </div>
+
+                <div class="p-8 border border-slate-800 rounded-2xl bg-card/20 feature-card transition-all text-left">
+                    <i class="fas fa-terminal text-cyan-500 mb-6 text-2xl"></i>
+                    <h4 class="text-white font-bold mb-3 italic">Scaffolding Magic</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">Geradores de código para Handlers e Repositories. Mantenha o <strong>rigor técnico e padrões da arquitetura</strong> sem esforço manual.</p>
+                </div>
+
+                <div class="p-8 border border-slate-800 rounded-2xl bg-card/20 feature-card transition-all text-left">
+                    <i class="fas fa- charms text-cyan-500 mb-6 text-2xl"></i>
+                    <h4 class="text-white font-bold mb-3 italic">Autonomous Self-Healing</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Engenharia de resiliência ativa. O sistema detecta falhas de infraestrutura e ativa **No-Op Fallbacks** instantaneamente. Um worker de background monitoriza a saúde e realiza **Hot Swapping** de conexões (Redis, Rabbit, Tracing) assim que os serviços recuperam, garantindo 100% de uptime operacional.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="multi-tenancy" class="py-24 bg-dark border-t border-slate-800 overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row gap-16 items-center">
+                <div class="lg:w-1/2 w-full order-2 lg:order-1">
+                    <div class="relative">
+                        <div class="absolute -inset-4 bg-cyan-500/10 rounded-full blur-3xl opacity-20"></div>
+                        <div class="terminal-window rounded-xl overflow-hidden shadow-2xl border border-slate-700/50 bg-dark/95">
+                            <div class="bg-slate-800/50 px-4 py-3 border-b border-slate-700 flex items-center gap-2">
+                                <i class="fas fa-database text-cyan-500 text-xs"></i>
+                                <span class="text-[10px] font-mono text-slate-400 uppercase tracking-widest">Database Isolation Scope</span>
+                            </div>
+                            <div class="p-6 font-mono text-[11px] md:text-xs leading-relaxed">
+                                <div class="text-slate-500 mb-2">// Automatic Tenant Filtering (GORM Scopes)</div>
+                                <div class="text-white">
+                                    <span class="text-cyan-400">func</span> <span class="text-yellow-400">OrganizationScope</span>(ctx context.Context) { <br>
+                                    &nbsp;&nbsp;orgID := contextutil.<span class="text-blue-400">GetOrganizationID</span>(ctx) <br>
+                                    &nbsp;&nbsp;<span class="text-pink-400">return</span> db.<span class="text-blue-400">Where</span>(<span class="text-emerald-400">"organization_id = ?"</span>, orgID) <br>
+                                    }
+                                </div>
+                                <div class="mt-6 p-3 bg-emerald-950/20 border border-emerald-900/50 rounded-lg">
+                                    <div class="text-emerald-400 font-bold text-[10px] mb-1">SQL OUTPUT:</div>
+                                    <code class="text-slate-300">SELECT * FROM users WHERE email = '...' <br> 
+                                    <span class="text-emerald-400 font-bold">AND organization_id = '019d8bdc-...'</span></code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:w-1/2 text-left order-1 lg:order-2">
+                    <h2 class="text-cyan-400 text-xs uppercase tracking-[0.3em] font-bold mb-4">SaaS Infrastructure</h2>
+                    <h3 class="text-3xl md:text-5xl font-extrabold text-white mb-6 italic">Multi-Tenancy Nativo. <br>Isolamento Absoluto.</h3>
+                    <p class="text-slate-400 mb-8 leading-relaxed text-sm md:text-base">
+                        Construído para escalar de um único cliente para milhares. O template utiliza <strong>Logical Isolation</strong> com injeção automática de contexto, garantindo que os dados de uma organização nunca vazem para outra.
+                    </p>
+                    
+                    <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-shield-halved text-cyan-500 mt-1"></i>
+                            <div>
+                                <h6 class="text-white font-bold text-xs uppercase tracking-widest italic">Shared or Owned</h6>
+                                <p class="text-slate-500 text-[11px]">Suporte a recursos globais e privados no mesmo esquema.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-fingerprint text-cyan-500 mt-1"></i>
+                            <div>
+                                <h6 class="text-white font-bold text-xs uppercase tracking-widest italic">JWT Contextual</h6>
+                                <p class="text-slate-500 text-[11px]">Identidade do tenant amarrada ao token com claims seguras.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="architecture" class="py-24 bg-dark border-t border-slate-800">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row gap-16 items-center">
+            <div class="md:w-1/2 text-left">
+                <h2 class="text-cyan-400 text-xs uppercase tracking-widest font-bold mb-4">The Engineering Inside</h2>
+                <h3 class="text-4xl font-extrabold text-white mb-8 italic">250+ Ficheiros prontos para escalar.</h3>
+                <ul class="space-y-4">
+                    <li class="flex items-center gap-3 text-sm italic"><i class="fas fa-check text-cyan-400"></i> <span>Clean Architecture com separação rigorosa de domínios</span></li>
+                    <li class="flex items-center gap-3 text-sm italic"><i class="fas fa-check text-cyan-400"></i> <span>Migrações declarativas via Atlas HCL</span></li>
+                    <li class="flex items-center gap-3 text-sm italic"><i class="fas fa-check text-cyan-400"></i> <span>Containerização Non-Root (Segurança Industrial)</span></li>
+                    <li class="flex items-center gap-3 text-sm italic"><i class="fas fa-check text-cyan-400"></i> <span>Postgres 16, Redis 7, RabbitMQ, MinIO e Observability Stack</span></li>
+                </ul>
+            </div>
+            <div class="md:w-1/2 bg-slate-900 p-6 rounded-xl border border-slate-700 font-mono text-[11px] text-slate-400 overflow-x-auto shadow-2xl">
+                <p class="text-cyan-400 mb-2">// Enterprise Directory Structure</p>
+                <div class="space-y-1">
+                    <p>├── <span class="text-white">cmd/</span> <span class="text-slate-600 italic"># API, Workers & Seeders</span></p>
+                    <p>├── <span class="text-white">internal/core/</span> <span class="text-slate-600 italic"># Handlers, Svc, Repos, Models</span></p>
+                    <p>├── <span class="text-white">internal/contracts/</span> <span class="text-slate-600 italic"># Decoupled Interfaces</span></p>
+                    <p>├── <span class="text-white">internal/infra/</span> <span class="text-slate-600 italic"># Messaging, DB, Obs, Cache</span></p>
+                    <p>├── <span class="text-white">pkg/</span> <span class="text-slate-600 italic"># Shared SDK (Auth, i18n, Storage)</span></p>
+                    <p>├── <span class="text-white">database/</span> <span class="text-slate-600 italic"># Atlas Migrations & SQL Views</span></p>
+                    <p>├── <span class="text-white">observability/</span> <span class="text-slate-600 italic"># Grafana, Prometheus & Jaeger</span></p>
+                    <p>├── <span class="text-white">scaffold/</span> <span class="text-slate-600 italic"># Code Generation Engine</span></p>
+                    <p>└── <span class="text-white">Makefile</span> <span class="text-slate-400 font-bold italic"># The Industrial Heart</span></p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-slate-800">
+                    <p class="text-emerald-400 mb-1">$ make help</p>
+                    <p class="text-slate-500">Usage: make [target]</p>
+                    <p class="text-slate-500">  <span class="text-white">docker-up</span>    Launch full stack (DB, MQ, Obs)</p>
+                    <p class="text-slate-500">  <span class="text-white">migrate</span>      Sync schema via Atlas HCL</p>
+                    <p class="text-slate-500">  <span class="text-white">scaffold</span>     Generate new domain module</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="observability" class="py-24 bg-slate-900/30 border-t border-slate-800">
+    <div class="container mx-auto px-6">
+        <div class="flex flex-col lg:flex-row gap-16 items-center">
+            <div class="lg:w-1/2 text-left">
+                <h2 class="text-cyan-400 text-xs uppercase tracking-[0.3em] font-bold mb-4">Real-Time Telemetry</h2>
+                <h3 class="text-3xl md:text-5xl font-extrabold text-white mb-6 italic">Visibilidade Total. <br>Sem esforço.</h3>
+                <p class="text-slate-400 mb-8 leading-relaxed">
+                    Não adivinhe o que está a acontecer no seu sistema. O template injeta automaticamente <strong>OpenTelemetry (OTel)</strong> em cada camada. Monitore latência, identifique gargalos em queries SQL e visualize o rastro completo de cada requisição.
+                </p>
+                
+                <div class="grid grid-cols-2 gap-6">
+                    <div>
+                        <h5 class="text-white font-bold text-[10px] uppercase tracking-widest mb-2 italic">Distributed Tracing</h5>
+                        <p class="text-slate-500 text-xs">Integração nativa com Jaeger. Veja o fluxo entre microserviços e workers.</p>
+                    </div>
+                    <div>
+                        <h5 class="text-white font-bold text-[10px] uppercase tracking-widest mb-2 italic">Performance Metrics</h5>
+                        <p class="text-slate-500 text-xs">Prometheus & Grafana prontos. Dashboards de Goroutines, GC e throughput.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:w-1/2 w-full">
+                <div class="relative">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-cyan-600/20 to-blue-600/20 rounded-xl blur-lg"></div>
+                    
+                    <div class="relative p-1 bg-slate-800 rounded-xl border border-slate-700 shadow-2xl">
+                        <div class="bg-dark/90 rounded-lg p-6 font-mono">
+                            <div class="flex items-center justify-between mb-4 border-b border-slate-800 pb-2">
+                                <span class="text-[10px] text-cyan-500 font-bold uppercase italic">Tracing Implementation</span>
+                                <div class="flex gap-1">
+                                    <div class="w-2 h-2 rounded-full bg-slate-700"></div>
+                                    <div class="w-2 h-2 rounded-full bg-slate-700"></div>
+                                </div>
+                            </div>
+                            <pre class="text-[11px] md:text-xs leading-relaxed">
+<span class="text-slate-500">// 1. Start Contextual Operation</span>
+ctx, span := s.Obs.StartOperation(ctx, <span class="text-yellow-500">"create"</span>)
+<span class="text-pink-400">defer</span> span.End()
+
+<span class="text-slate-500">// 2. Track Specific Stages</span>
+span.SetStage(constants.StageRepositoryCreate)
+err := s.Repo.Create(ctx, model)
+
+<span class="text-slate-500">// 3. Automatic Outcome Recording</span>
+s.Obs.RecordOutcome(ctx, <span class="text-yellow-500">"create"</span>, err)</pre>
+                            
+                            <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between">
+                                <span class="text-[9px] text-slate-500 font-bold uppercase">Trace Status:</span>
+                                <span class="px-2 py-1 bg-green-500/10 text-green-400 border border-green-500/20 rounded text-[9px] font-bold">200 OK - 1.58s</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <section id="cicd" class="py-24 bg-dark border-t border-slate-800">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row-reverse gap-16 items-center">
+                <div class="lg:w-1/2 text-left">
+                    <h2 class="text-cyan-400 text-xs uppercase tracking-[0.3em] font-bold mb-4">Industrial Delivery</h2>
+                    
+                    <h3 class="text-3xl md:text-5xl font-extrabold text-white mb-6 italic">Deploy Sem Fronteiras.</h3>
+                    <p class="text-slate-400 mb-8 leading-relaxed">
+                        Seja na Cloud ou no seu próprio Data Center. O template entrega configurações prontas para <strong>GitHub Actions</strong>, <strong>Jenkins</strong> e <strong>Kubernetes</strong>, permitindo que a sua infraestrutura escale com o negócio.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4 p-4 bg-slate-900/40 border border-slate-800 rounded-xl hover:border-cyan-900/50 transition-colors">
+                            <div class="text-cyan-500 mt-1"><i class="fas fa-server"></i></div>
+                            <div>
+                                <h5 class="text-white font-bold text-sm uppercase italic">On-Premise & Jenkins Ready</h5>
+                                <p class="text-slate-500 text-xs">Pipelines industriais para servidores privados e instâncias Jenkins com gestão de recursos otimizada.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 bg-slate-900/40 border border-slate-800 rounded-xl hover:border-cyan-900/50 transition-colors">
+                            <div class="text-cyan-500 mt-1"><i class="fas fa-box-open"></i></div>
+                            <div>
+                                <h5 class="text-white font-bold text-sm uppercase italic">Multi-Stage Docker Build</h5>
+                                <p class="text-slate-500 text-xs">Builds paralelos para API, Worker e Cronjobs. Imagens ultra-leves e seguras (Non-Root).</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 bg-slate-900/40 border border-slate-800 rounded-xl hover:border-cyan-900/50 transition-colors">
+                            <div class="text-cyan-500 mt-1"><i class="fas fa-cubes"></i></div>
+                            <div>
+                                <h5 class="text-white font-bold text-sm uppercase italic">Kubernetes Orchestration</h5>
+                                <p class="text-slate-500 text-xs">Manifestos prontos para alta disponibilidade e escalabilidade horizontal automática.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:w-1/2 w-full">
+                    <div class="terminal-window rounded-xl overflow-hidden shadow-2xl border border-slate-700/50">
+                        <div class="bg-slate-800/50 px-4 py-2 border-b border-slate-700 flex items-center justify-between">
+                            <span class="text-[10px] font-mono text-slate-400 uppercase tracking-widest italic">Hybrid Deployment Engine</span>
+                            <div class="flex gap-1.5">
+                                <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                            </div>
+                        </div>
+                        <div class="p-6 bg-dark/95 font-mono text-[11px] leading-relaxed">
+                            <div class="flex items-center gap-3 mb-2">
+                                <span class="text-cyan-500 font-bold">$</span>
+                                <span class="text-white">./deploy/on-premise/setup.sh --environment=prod</span>
+                            </div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="text-green-500 font-bold">✓</span>
+                                <span class="text-white">Orchestrating services (API, Worker, Redis)</span>
+                            </div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="text-green-500 font-bold">✓</span>
+                                <span class="text-white">Setting up Prometheus Monitoring</span>
+                            </div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="text-green-500 font-bold">✓</span>
+                                <span class="text-white">Healthcheck: Services are IDEMPOTENT & Online</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-cyan-400 font-bold border-t border-slate-800 pt-4">
+                                <span>🚀 STACK READY: http://localhost:8080</span>
+                                <span class="text-slate-600 ml-auto">SUCCESS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reliability" class="py-24 bg-slate-900/20 border-t border-slate-800">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="order-2 md:order-1">
+                    <div class="p-8 bg-dark rounded-xl border border-cyan-900/30 shadow-2xl shadow-cyan-900/10 font-mono">
+                        <h4 class="text-cyan-400 text-xs mb-4">// Resilience Pattern: Atomic Outbox</h4>
+                        <pre class="text-[10px] text-slate-400 leading-tight">
+    <span class="text-pink-400">func</span> (w *Worker) <span class="text-cyan-400">Process</span>(ctx, event) {
+        <span class="text-slate-600">// 1. Idempotency Check (No duplicates)</span>
+        <span class="text-pink-400">if</span> w.cache.Exists(event.ID) { <span class="text-pink-400">return</span> nil }
+
+        <span class="text-slate-600">// 2. Transactional Business Logic</span>
+        err := w.db.WithTransaction(ctx, func(tx) {
+            <span class="text-pink-400">return</span> w.service.Handle(tx, event)
+        })
+
+        <span class="text-slate-600">// 3. Mark as Processed</span>
+        <span class="text-pink-400">return</span> w.cache.Set(event.ID, <span class="text-yellow-500">"DONE"</span>)
+    }</pre>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2 text-left">
+                    <h2 class="text-cyan-400 text-xs uppercase tracking-widest font-bold mb-4">Industrial Reliability</h2>
+                    <h3 class="text-3xl md:text-5xl font-extrabold text-white mb-6 italic">Zero Data Loss. <br>Period.</h3>
+                    <p class="text-slate-400 mb-8 leading-relaxed">
+                        A maioria dos microserviços falha em condições de rede instáveis. O nosso template utiliza padrões de <strong>Engenharia Distribuída de alto nível</strong> para garantir que nenhum dado é perdido.
+                    </p>
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="mt-1 bg-cyan-900/30 p-2 rounded border border-cyan-600/30 text-cyan-400"><i class="fas fa-shield-halved"></i></div>
+                            <div>
+                                <h5 class="text-white font-bold text-sm uppercase italic">Transactional Outbox</h5>
+                                <p class="text-slate-500 text-xs mt-1">Sincronização garantida entre a Base de Dados e o Message Broker. Eventos são persistidos antes de serem publicados.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="mt-1 bg-cyan-900/30 p-2 rounded border border-cyan-600/30 text-cyan-400"><i class="fas fa-fingerprint"></i></div>
+                            <div>
+                                <h5 class="text-white font-bold text-sm uppercase italic">Smart Idempotency</h5>
+                                <p class="text-slate-500 text-xs mt-1">Proteção contra processamento duplicado em cenários de retry, utilizando o nosso middleware de rastreio de estado.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="mt-1 bg-cyan-900/30 p-2 rounded border border-cyan-600/30 text-cyan-400"><i class="fas fa-heart-pulse"></i></div>
+                            <div>
+                                <h5 class="text-white font-bold text-sm uppercase italic">Self-Healing & No-Op</h5>
+                                <p class="text-slate-500 text-xs mt-1">O sistema detecta falhas de infraestrutura no boot e ativa fallbacks inteligentes, garantindo que a API continue a servir tráfego vital mesmo sob stress.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="py-32 bg-dark border-t border-slate-800">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-cyan-400 text-xs uppercase tracking-[0.3em] font-bold mb-4">Acesso Imediato</h2>
+            <h3 class="text-4xl font-extrabold text-white mb-16 italic text-center">Planos de Licenciamento</h3>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div class="bg-card border border-slate-800 rounded-3xl p-10 text-left hover:border-slate-700 transition relative">
+                    <span class="text-cyan-600 font-mono text-xs uppercase tracking-widest font-bold">Solo Developer</span>
+                    <h4 class="text-3xl font-bold text-white mt-2 mb-6 italic">Indie Professional</h4>
+                    <div class="mb-8">
+                        <span class="text-5xl font-black text-white">$199<span class="text-xl font-normal text-slate-500">.00</span></span>
+                        <p class="text-slate-500 text-[10px] mt-2 uppercase tracking-widest font-bold">Pagamento Único</p>
+                    </div>
+                    <ul class="space-y-4 mb-10 text-sm text-slate-400">
+                        <li><i class="fas fa-check text-cyan-500 mr-2"></i> Acesso ao Repo Privado (1 User)</li>
+                        <li><i class="fas fa-check text-cyan-500 mr-2"></i> Uso em Projetos Freelance/Pessoais</li>
+                        <li><i class="fas fa-check text-cyan-500 mr-2"></i> Atualizações de Segurança Vitalícias</li>
+                        <li><i class="fas fa-check text-cyan-500 mr-2"></i> Documentação Técnica Completa</li>
+                    </ul>
+                    <a href="https://wa.me/244936166699?text=Olá%20David,%20tenho%20interesse%20na%20licença%20Solo%20do%20Template%20Go." target="_blank" class="block w-full py-4 rounded-xl border border-cyan-600 text-cyan-400 font-bold text-center hover:bg-cyan-600 hover:text-white transition uppercase text-xs tracking-widest">Comprar Licença Solo</a>
+                </div>
+
+                <div class="bg-card border-2 border-cyan-400 rounded-3xl p-10 text-left relative shadow-[0_0_50px_-12px_rgba(34,211,238,0.2)]">
+                    <div class="absolute top-5 right-[-35px] bg-cyan-500 text-white text-[10px] font-bold py-1 px-10 rotate-45 uppercase tracking-widest">Empresarial</div>
+                    <span class="text-cyan-400 font-mono text-xs uppercase tracking-widest italic font-bold">Startup & Enterprise</span>
+                    <h4 class="text-3xl font-bold text-white mt-2 mb-6 italic">Team Acceleration</h4>
+                    <div class="mb-8">
+                        <span class="text-5xl font-black text-white">$499<span class="text-xl font-normal text-slate-500">.00</span></span>
+                        <p class="text-cyan-400 text-[10px] mt-2 uppercase tracking-widest font-bold">ROI Estimado: 10x na primeira semana</p>
+                    </div>
+                    <ul class="space-y-4 mb-10 text-sm text-slate-300">
+                        <li><i class="fas fa-check text-cyan-400 mr-2"></i> Acesso p/ Equipa Inteira (Org Access)</li>
+                        <li><i class="fas fa-check text-cyan-400 mr-2"></i> Projetos Comerciais Ilimitados</li>
+                        <li><i class="fas fa-check text-cyan-400 mr-2"></i> Suporte Prioritário via WhatsApp</li>
+                        <li><i class="fas fa-check text-cyan-400 mr-2"></i> Guia de Onboarding para Equipa</li>
+                    </ul>
+                    <a href="https://wa.me/244936166699?text=Olá%20David,%20gostaria%20de%20adquirir%20a%20licença%20Team%20para%20a%20minha%20empresa." target="_blank" class="block w-full py-4 rounded-xl bg-cyan-500 text-white font-black text-center hover:bg-cyan-400 transition uppercase text-xs tracking-widest shadow-lg shadow-cyan-900/20">Obter Acesso Team</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-24 bg-slate-900/10 border-t border-slate-800 text-left">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <h3 class="text-3xl font-extrabold text-white mb-12 text-center italic uppercase tracking-tighter">Perguntas Frequentes</h3>
+            <div class="space-y-6">
+                <div class="p-6 border border-slate-800 rounded-xl bg-card/20">
+                    <h4 class="text-white font-bold mb-2">Porquê investir $199 num template em vez de criar um internamente?</h4>
+                    <p class="text-slate-400 text-sm italic">
+                        O custo médio de um engenheiro sénior para desenhar, implementar e testar esta infraestrutura ultrapassa os <strong>$3.000</strong> em horas técnicas. Ao adquirir o template, não está apenas a comprar código; está a comprar <strong>mais de 200 horas de R&D e refinamento arquitetural</strong>, permitindo que a sua equipa comece a produzir valor de negócio no minuto zero.
+                    </p>
+                </div>
+                <div class="p-6 border border-slate-800 rounded-xl bg-card/20">
+                    <h4 class="text-white font-bold mb-2">Vou receber o código-fonte completo?</h4>
+                    <p class="text-slate-400 text-sm italic">Sim. Receberás acesso imediato ao repositório privado no GitHub com todo o código, scripts de build e documentação técnica detalhada.</p>
+                </div>
+                <div class="p-6 border border-slate-800 rounded-xl bg-card/20">
+                    <h4 class="text-white font-bold mb-2">Qual é o nível de Go necessário?</h4>
+                    <p class="text-slate-400 text-sm italic">O template foi desenhado para ser intuitivo. Se conheces os básicos de Go e Docker, a estrutura de pastas e o Makefile guiar-te-ão no processo.</p>
+                </div>
+                <div class="p-6 border border-slate-800 rounded-xl bg-card/20">
+                    <h4 class="text-white font-bold mb-2">Como funcionam as atualizações?</h4>
+                    <p class="text-slate-400 text-sm italic">Como é uma licença vitalícia, terás acesso a todas as correções de bugs e atualizações de segurança que forem lançadas no repositório core.</p>
+                </div>
+                <div class="p-6 border border-slate-800 rounded-xl bg-card/20">
+                    <h4 class="text-white font-bold mb-2">O sistema suporta Multi-tenancy nativo?</h4>
+                    <p class="text-slate-400 text-sm italic">Sim. O isolamento lógico de dados é feito ao nível do motor de base de dados através de injeção automática de contexto, garantindo segurança total entre diferentes clientes ou organizações no mesmo banco.</p>
+                </div>
+
+                <div class="p-6 border border-slate-800 rounded-xl bg-card/20">
+                    <h4 class="text-white font-bold mb-2">Como é feita a gestão de migrações?</h4>
+                    <p class="text-slate-400 text-sm italic">Utilizamos o Atlas HCL para migrações declarativas. O esquema da base de dados é versionado como código, permitindo que a infraestrutura acompanhe o deploy de forma segura e automatizada via Makefile.</p>
+                </div>
+
+                <div class="p-6 border border-slate-800 rounded-xl bg-card/20">
+                    <h4 class="text-white font-bold mb-2">O template está pronto para Alta Disponibilidade (HA)?</h4>
+                    <p class="text-slate-400 text-sm italic">Absolutamente. O sistema é Stateless por design, inclui configurações de Graceful Shutdown e manifestos prontos para Kubernetes, permitindo escalonamento horizontal sem perda de dados ou interrupção de processos.</p>
+                </div>
+
+                <div class="p-6 border border-slate-800 rounded-xl bg-card/20">
+                    <h4 class="text-white font-bold mb-2">Posso usar este template em projetos comerciais?</h4>
+                    <p class="text-slate-400 text-sm italic">Sim. A licença permite o uso em projetos ilimitados, sejam eles pessoais ou para clientes finais. Não existem taxas recorrentes ou royalties.</p>
+                </div>
+
+                <div class="p-6 border border-slate-800 rounded-xl bg-card/20">
+                    <h4 class="text-white font-bold mb-2">Como funciona o deploy em infraestrutura própria (On-Premise)?</h4>
+                    <p class="text-slate-400 text-sm italic">O template é agnóstico. Fornecemos scripts de automação e um Makefile industrial que permite orquestrar o deploy em servidores privados, VPS ou Docker Swarm com o mesmo rigor técnico de um ambiente Cloud.</p>
+                </div>
+
+                <div class="p-6 border border-slate-800 rounded-xl bg-card/20">
+                    <h4 class="text-white font-bold mb-2">Já inclui pipelines de CI/CD?</h4>
+                    <p class="text-slate-400 text-sm italic">Sim. Receberá workflows prontos para GitHub Actions e estrutura para Jenkins Pipelines. A automação cobre desde a execução de testes unitários até ao build multi-stage e push para o seu Registry privado.</p>
+                </div>
+
+                <div class="p-6 border border-slate-800 rounded-xl bg-card/20">
+                    <h4 class="text-white font-bold mb-2">As imagens Docker são seguras para produção?</h4>
+                    <p class="text-slate-400 text-sm italic">Utilizamos as melhores práticas de segurança: builds multi-stage, execução como utilizador non-root e imagens base minimalistas, garantindo performance e conformidade com padrões de segurança empresarial.</p>
+                </div>
+
+                <div class="p-6 border border-slate-800 rounded-xl bg-card/20">
+                    <h4 class="text-white font-bold mb-2">O sistema sobrevive a quedas de infraestrutura em runtime?</h4>
+                    <p class="text-slate-400 text-sm italic">
+                        Sim. Implementamos um motor de <strong>Self-Healing dinâmico</strong>. Se um serviço como Redis ou RabbitMQ falhar, o sistema ativa automaticamente implementações No-Op para evitar crashes em cascata. Assim que a infraestrutura recupera, o worker interno realiza um <strong>Hot Swap</strong> de conexões em tempo real, restaurando a saúde total sem necessidade de intervenção humana.
+                    </p>
+                </div>
+
+                <div class="p-6 border border-slate-800 rounded-xl bg-card/20">
+                    <h4 class="text-white font-bold mb-2">O template impõe algum framework proprietário ou lock-in?</h4>
+                    <p class="text-slate-400 text-sm italic">
+                        De forma alguma. Seguimos rigorosamente o padrão de <strong>Ports & Adapters</strong>. Toda a infraestrutura é gerida através de <strong>Contracts</strong>; o core do negócio conhece apenas as interfaces, nunca as implementações. Isso garante que possas trocar qualquer tecnologia (Base de Dados, Broker, Cache) sem tocar numa única linha de lógica de negócio.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="licensing" class="py-24 bg-dark border-t border-slate-800">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto border border-slate-800 rounded-3xl p-10 bg-card/50 backdrop-blur-sm">
+                <div class="flex flex-col md:flex-row gap-12 items-start">
+                    <div class="md:w-1/3 text-left">
+                        <h2 class="text-2xl font-bold text-white mb-2 italic">Licenciamento</h2>
+                        <span class="text-cyan-400 text-xs uppercase tracking-widest font-bold">Commercial & Professional</span>
+                        <div class="w-12 h-1 bg-cyan-600 rounded mt-4"></div>
+                    </div>
+                    <div class="md:w-2/3 space-y-4 text-slate-400 text-sm leading-relaxed text-left">
+                        <p>Ao adquirir o acesso, você recebe uma licença perpétua e comercial.</p>
+                        <p><strong>✓ Uso em Projetos Ilimitados:</strong> Ideal para freelancers e agências que precisam de velocidade.</p>
+                        <p><strong>✓ Propriedade Total do Código:</strong> O código gerado é 100% seu. Sem royalties ou taxas ocultas.</p>
+                        <p class="text-[10px] text-slate-500 italic mt-6">* É estritamente proibida a redistribuição ou revenda do template original como um produto de "boilerplate" concorrente.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-16 border-t border-slate-800 bg-dark text-center">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-wrap justify-center gap-8 mb-10 text-[10px] font-mono tracking-widest uppercase font-bold">
+                <a href="mailto:ortizaad1994@gmail.com" class="hover:text-cyan-400 transition flex items-center gap-2"><i class="fas fa-envelope text-cyan-600"></i> ortizaad1994@gmail.com</a>
+                <a href="https://linkedin.com/in/ortiz-david" target="_blank" class="hover:text-cyan-400 transition flex items-center gap-2"><i class="fab fa-linkedin text-cyan-600"></i> linkedin.com/in/ortiz-david</a>
+                <a href="tel:+244936166699" class="hover:text-cyan-400 transition flex items-center gap-2"><i class="fas fa-phone text-cyan-600"></i> (+244) 936 166 699</a>
+            </div>
+            <p class="text-slate-600 text-[10px] font-mono uppercase tracking-[0.4em]">&copy; 2026 ORTIZ DAVID. ENGINEERED FOR HIGH-PERFORMANCE BACKENDS.</p>
+            <p class="text-slate-800 text-[9px] font-mono uppercase tracking-[0.2em] mt-2">Based in Luanda, Angola. Serving the Global Tech Community.</p>
+        </div>
+    </footer> 
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

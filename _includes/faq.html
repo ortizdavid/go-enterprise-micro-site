@@ -1,0 +1,74 @@
+   <section id="faq" class="py-24 bg-slate-900/10 border-t border-slate-800 text-left">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <h3 class="text-3xl font-extrabold text-white mb-12 text-center italic uppercase tracking-tighter">Perguntas Frequentes</h3>
+            <div class="space-y-6">
+                <div class="p-6 border border-slate-800 rounded-xl bg-card/20">
+                    <h4 class="text-white font-bold mb-2">Porquê investir $199 num template em vez de criar um internamente?</h4>
+                    <p class="text-slate-400 text-sm italic">
+                        O custo médio de um engenheiro sénior para desenhar, implementar e testar esta infraestrutura ultrapassa os <strong>$3.000</strong> em horas técnicas. Ao adquirir o template, não está apenas a comprar código; está a comprar <strong>mais de 200 horas de R&D e refinamento arquitetural</strong>, permitindo que a sua equipa comece a produzir valor de negócio no minuto zero.
+                    </p>
+                </div>
+                <div class="p-6 border border-slate-800 rounded-xl bg-card/20">
+                    <h4 class="text-white font-bold mb-2">Vou receber o código-fonte completo?</h4>
+                    <p class="text-slate-400 text-sm italic">Sim. Receberás acesso imediato ao repositório privado no GitHub com todo o código, scripts de build e documentação técnica detalhada.</p>
+                </div>
+                <div class="p-6 border border-slate-800 rounded-xl bg-card/20">
+                    <h4 class="text-white font-bold mb-2">Qual é o nível de Go necessário?</h4>
+                    <p class="text-slate-400 text-sm italic">O template foi desenhado para ser intuitivo. Se conheces os básicos de Go e Docker, a estrutura de pastas e o Makefile guiar-te-ão no processo.</p>
+                </div>
+                <div class="p-6 border border-slate-800 rounded-xl bg-card/20">
+                    <h4 class="text-white font-bold mb-2">Como funcionam as atualizações?</h4>
+                    <p class="text-slate-400 text-sm italic">Como é uma licença vitalícia, terás acesso a todas as correções de bugs e atualizações de segurança que forem lançadas no repositório core.</p>
+                </div>
+                <div class="p-6 border border-slate-800 rounded-xl bg-card/20">
+                    <h4 class="text-white font-bold mb-2">O sistema suporta Multi-tenancy nativo?</h4>
+                    <p class="text-slate-400 text-sm italic">Sim. O isolamento lógico de dados é feito ao nível do motor de base de dados através de injeção automática de contexto, garantindo segurança total entre diferentes clientes ou organizações no mesmo banco.</p>
+                </div>
+
+                <div class="p-6 border border-slate-800 rounded-xl bg-card/20">
+                    <h4 class="text-white font-bold mb-2">Como é feita a gestão de migrações?</h4>
+                    <p class="text-slate-400 text-sm italic">Utilizamos o Atlas HCL para migrações declarativas. O esquema da base de dados é versionado como código, permitindo que a infraestrutura acompanhe o deploy de forma segura e automatizada via Makefile.</p>
+                </div>
+
+                <div class="p-6 border border-slate-800 rounded-xl bg-card/20">
+                    <h4 class="text-white font-bold mb-2">O template está pronto para Alta Disponibilidade (HA)?</h4>
+                    <p class="text-slate-400 text-sm italic">Absolutamente. O sistema é Stateless por design, inclui configurações de Graceful Shutdown e manifestos prontos para Kubernetes, permitindo escalonamento horizontal sem perda de dados ou interrupção de processos.</p>
+                </div>
+
+                <div class="p-6 border border-slate-800 rounded-xl bg-card/20">
+                    <h4 class="text-white font-bold mb-2">Posso usar este template em projetos comerciais?</h4>
+                    <p class="text-slate-400 text-sm italic">Sim. A licença permite o uso em projetos ilimitados, sejam eles pessoais ou para clientes finais. Não existem taxas recorrentes ou royalties.</p>
+                </div>
+
+                <div class="p-6 border border-slate-800 rounded-xl bg-card/20">
+                    <h4 class="text-white font-bold mb-2">Como funciona o deploy em infraestrutura própria (On-Premise)?</h4>
+                    <p class="text-slate-400 text-sm italic">O template é agnóstico. Fornecemos scripts de automação e um Makefile industrial que permite orquestrar o deploy em servidores privados, VPS ou Docker Swarm com o mesmo rigor técnico de um ambiente Cloud.</p>
+                </div>
+
+                <div class="p-6 border border-slate-800 rounded-xl bg-card/20">
+                    <h4 class="text-white font-bold mb-2">Já inclui pipelines de CI/CD?</h4>
+                    <p class="text-slate-400 text-sm italic">Sim. Receberá workflows prontos para GitHub Actions e estrutura para Jenkins Pipelines. A automação cobre desde a execução de testes unitários até ao build multi-stage e push para o seu Registry privado.</p>
+                </div>
+
+                <div class="p-6 border border-slate-800 rounded-xl bg-card/20">
+                    <h4 class="text-white font-bold mb-2">As imagens Docker são seguras para produção?</h4>
+                    <p class="text-slate-400 text-sm italic">Utilizamos as melhores práticas de segurança: builds multi-stage, execução como utilizador non-root e imagens base minimalistas, garantindo performance e conformidade com padrões de segurança empresarial.</p>
+                </div>
+
+                <div class="p-6 border border-slate-800 rounded-xl bg-card/20">
+                    <h4 class="text-white font-bold mb-2">O sistema sobrevive a quedas de infraestrutura em runtime?</h4>
+                    <p class="text-slate-400 text-sm italic">
+                        Sim. Implementamos um motor de <strong>Self-Healing dinâmico</strong>. Se um serviço como Redis ou RabbitMQ falhar, o sistema ativa automaticamente implementações No-Op para evitar crashes em cascata. Assim que a infraestrutura recupera, o worker interno realiza um <strong>Hot Swap</strong> de conexões em tempo real, restaurando a saúde total sem necessidade de intervenção humana.
+                    </p>
+                </div>
+
+                <div class="p-6 border border-slate-800 rounded-xl bg-card/20">
+                    <h4 class="text-white font-bold mb-2">O template impõe algum framework proprietário ou lock-in?</h4>
+                    <p class="text-slate-400 text-sm italic">
+                        De forma alguma. Seguimos rigorosamente o padrão de <strong>Ports & Adapters</strong>. Toda a infraestrutura é gerida através de <strong>Contracts</strong>; o core do negócio conhece apenas as interfaces, nunca as implementações. Isso garante que possas trocar qualquer tecnologia (Base de Dados, Broker, Cache) sem tocar numa única linha de lógica de negócio.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>

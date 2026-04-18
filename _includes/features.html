@@ -1,0 +1,69 @@
+ <section id="features" class="py-24 bg-slate-900/10 border-t border-slate-800">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-cyan-400 text-xs uppercase tracking-[0.3em] font-bold mb-4">Core Capabilities</h2>
+                <h3 class="text-3xl md:text-5xl font-extrabold text-white italic">Engenharia sem compromissos.</h3>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 border border-slate-800 rounded-2xl bg-card/20 feature-card transition-all text-left">
+                    <i class="fas fa-microchip text-cyan-500 mb-6 text-2xl"></i>
+                    <h4 class="text-white font-bold mb-3 italic">CQRS Primordial</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">Segregação total entre leitura e escrita. Repositórios otimizados para <strong>performance máxima em SQL</strong> e Cache Sidecar em Redis.</p>
+                </div>
+
+                <div class="p-8 border border-slate-800 rounded-2xl bg-card/20 feature-card transition-all text-left">
+                    <i class="fas fa-key text-cyan-500 mb-6 text-2xl"></i>
+                    <h4 class="text-white font-bold mb-3 italic">Enterprise Auth</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">Identity completo: JWT Stateless, Blacklisting via Redis, RBAC granular e Middlewares de autorização industrial.</p>
+                </div>
+
+                <div class="p-8 border border-slate-800 rounded-2xl bg-card/20 feature-card transition-all text-left">
+                    <i class="fas fa-envelope-open-text text-cyan-500 mb-6 text-2xl"></i>
+                    <h4 class="text-white font-bold mb-3 italic">Transactional Outbox</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">Resiliência absoluta para RabbitMQ. Garanta que eventos distribuídos nunca sejam perdidos, mesmo em falhas de rede.</p>
+                </div>
+
+                <div class="p-8 border border-slate-800 rounded-2xl bg-card/20 feature-card transition-all text-left">
+                    <i class="fas fa-gears text-cyan-500 mb-6 text-2xl"></i>
+                    <h4 class="text-white font-bold mb-3 italic">Worker Manager Pro</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">Gestão nativa de tarefas em background com <strong>Graceful Shutdown</strong>. Orquestração de consumidores RabbitMQ com auto-recovery e monitorização de saúde.</p>
+                </div>
+
+                <div class="p-8 border border-slate-800 rounded-2xl bg-card/20 feature-card transition-all text-left">
+                    <i class="fas fa-file-shield text-cyan-500 mb-6 text-2xl"></i>
+                    <h4 class="text-white font-bold mb-3 italic">Smart Asset Engine</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">Gestão agnóstica (S3/MinIO). Classificação automática, checksum de integridade e <strong>lógica de preview nativa</strong>.</p>
+                </div>
+
+                <div class="p-8 border border-slate-800 rounded-2xl bg-card/20 feature-card transition-all text-left">
+                    <i class="fas fa-vial text-cyan-500 mb-6 text-2xl"></i>
+                    <h4 class="text-white font-bold mb-3 italic">Observability Ready</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">Logs estruturados (Slog/Zap) e Healthchecks integrados prontos para Kubernetes, Docker Swarm ou Bare Metal.</p>
+                </div>
+
+                <div class="p-8 border border-slate-800 rounded-2xl bg-card/20 feature-card transition-all text-left">
+                    <i class="fas fa-chart-line text-cyan-500 mb-6 text-2xl"></i>
+                    <h4 class="text-white font-bold mb-3 italic">Full-Stack Observability</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Dashboards <strong>Grafana & Prometheus</strong> pré-configurados com métricas de GC, Heap e Goroutines. Tracing distribuído com <strong>Jaeger</strong> integrado via OpenTelemetry.
+                    </p>
+                </div>
+
+                <div class="p-8 border border-slate-800 rounded-2xl bg-card/20 feature-card transition-all text-left">
+                    <i class="fas fa-terminal text-cyan-500 mb-6 text-2xl"></i>
+                    <h4 class="text-white font-bold mb-3 italic">Scaffolding Magic</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">Geradores de código para Handlers e Repositories. Mantenha o <strong>rigor técnico e padrões da arquitetura</strong> sem esforço manual.</p>
+                </div>
+
+                <div class="p-8 border border-slate-800 rounded-2xl bg-card/20 feature-card transition-all text-left">
+                    <i class="fas fa- charms text-cyan-500 mb-6 text-2xl"></i>
+                    <h4 class="text-white font-bold mb-3 italic">Autonomous Self-Healing</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Engenharia de resiliência ativa. O sistema detecta falhas de infraestrutura e ativa **No-Op Fallbacks** instantaneamente. Um worker de background monitoriza a saúde e realiza **Hot Swapping** de conexões (Redis, Rabbit, Tracing) assim que os serviços recuperam, garantindo 100% de uptime operacional.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>

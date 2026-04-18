@@ -1,0 +1,54 @@
+  <section id="reliability" class="py-24 bg-slate-900/20 border-t border-slate-800">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="order-2 md:order-1">
+                    <div class="p-8 bg-dark rounded-xl border border-cyan-900/30 shadow-2xl shadow-cyan-900/10 font-mono">
+                        <h4 class="text-cyan-400 text-xs mb-4">// Resilience Pattern: Atomic Outbox</h4>
+                        <pre class="text-[10px] text-slate-400 leading-tight">
+    <span class="text-pink-400">func</span> (w *Worker) <span class="text-cyan-400">Process</span>(ctx, event) {
+        <span class="text-slate-600">// 1. Idempotency Check (No duplicates)</span>
+        <span class="text-pink-400">if</span> w.cache.Exists(event.ID) { <span class="text-pink-400">return</span> nil }
+
+        <span class="text-slate-600">// 2. Transactional Business Logic</span>
+        err := w.db.WithTransaction(ctx, func(tx) {
+            <span class="text-pink-400">return</span> w.service.Handle(tx, event)
+        })
+
+        <span class="text-slate-600">// 3. Mark as Processed</span>
+        <span class="text-pink-400">return</span> w.cache.Set(event.ID, <span class="text-yellow-500">"DONE"</span>)
+    }</pre>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2 text-left">
+                    <h2 class="text-cyan-400 text-xs uppercase tracking-widest font-bold mb-4">Industrial Reliability</h2>
+                    <h3 class="text-3xl md:text-5xl font-extrabold text-white mb-6 italic">Zero Data Loss. <br>Period.</h3>
+                    <p class="text-slate-400 mb-8 leading-relaxed">
+                        A maioria dos microserviços falha em condições de rede instáveis. O nosso template utiliza padrões de <strong>Engenharia Distribuída de alto nível</strong> para garantir que nenhum dado é perdido.
+                    </p>
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="mt-1 bg-cyan-900/30 p-2 rounded border border-cyan-600/30 text-cyan-400"><i class="fas fa-shield-halved"></i></div>
+                            <div>
+                                <h5 class="text-white font-bold text-sm uppercase italic">Transactional Outbox</h5>
+                                <p class="text-slate-500 text-xs mt-1">Sincronização garantida entre a Base de Dados e o Message Broker. Eventos são persistidos antes de serem publicados.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="mt-1 bg-cyan-900/30 p-2 rounded border border-cyan-600/30 text-cyan-400"><i class="fas fa-fingerprint"></i></div>
+                            <div>
+                                <h5 class="text-white font-bold text-sm uppercase italic">Smart Idempotency</h5>
+                                <p class="text-slate-500 text-xs mt-1">Proteção contra processamento duplicado em cenários de retry, utilizando o nosso middleware de rastreio de estado.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="mt-1 bg-cyan-900/30 p-2 rounded border border-cyan-600/30 text-cyan-400"><i class="fas fa-heart-pulse"></i></div>
+                            <div>
+                                <h5 class="text-white font-bold text-sm uppercase italic">Self-Healing & No-Op</h5>
+                                <p class="text-slate-500 text-xs mt-1">O sistema detecta falhas de infraestrutura no boot e ativa fallbacks inteligentes, garantindo que a API continue a servir tráfego vital mesmo sob stress.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

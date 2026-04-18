@@ -1,0 +1,56 @@
+    <section id="multi-tenancy" class="py-24 bg-dark border-t border-slate-800 overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row gap-16 items-center">
+                <div class="lg:w-1/2 w-full order-2 lg:order-1">
+                    <div class="relative">
+                        <div class="absolute -inset-4 bg-cyan-500/10 rounded-full blur-3xl opacity-20"></div>
+                        <div class="terminal-window rounded-xl overflow-hidden shadow-2xl border border-slate-700/50 bg-dark/95">
+                            <div class="bg-slate-800/50 px-4 py-3 border-b border-slate-700 flex items-center gap-2">
+                                <i class="fas fa-database text-cyan-500 text-xs"></i>
+                                <span class="text-[10px] font-mono text-slate-400 uppercase tracking-widest">Database Isolation Scope</span>
+                            </div>
+                            <div class="p-6 font-mono text-[11px] md:text-xs leading-relaxed">
+                                <div class="text-slate-500 mb-2">// Automatic Tenant Filtering (GORM Scopes)</div>
+                                <div class="text-white">
+                                    <span class="text-cyan-400">func</span> <span class="text-yellow-400">OrganizationScope</span>(ctx context.Context) { <br>
+                                    &nbsp;&nbsp;orgID := contextutil.<span class="text-blue-400">GetOrganizationID</span>(ctx) <br>
+                                    &nbsp;&nbsp;<span class="text-pink-400">return</span> db.<span class="text-blue-400">Where</span>(<span class="text-emerald-400">"organization_id = ?"</span>, orgID) <br>
+                                    }
+                                </div>
+                                <div class="mt-6 p-3 bg-emerald-950/20 border border-emerald-900/50 rounded-lg">
+                                    <div class="text-emerald-400 font-bold text-[10px] mb-1">SQL OUTPUT:</div>
+                                    <code class="text-slate-300">SELECT * FROM users WHERE email = '...' <br> 
+                                    <span class="text-emerald-400 font-bold">AND organization_id = '019d8bdc-...'</span></code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:w-1/2 text-left order-1 lg:order-2">
+                    <h2 class="text-cyan-400 text-xs uppercase tracking-[0.3em] font-bold mb-4">SaaS Infrastructure</h2>
+                    <h3 class="text-3xl md:text-5xl font-extrabold text-white mb-6 italic">Multi-Tenancy Nativo. <br>Isolamento Absoluto.</h3>
+                    <p class="text-slate-400 mb-8 leading-relaxed text-sm md:text-base">
+                        Construído para escalar de um único cliente para milhares. O template utiliza <strong>Logical Isolation</strong> com injeção automática de contexto, garantindo que os dados de uma organização nunca vazem para outra.
+                    </p>
+                    
+                    <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-shield-halved text-cyan-500 mt-1"></i>
+                            <div>
+                                <h6 class="text-white font-bold text-xs uppercase tracking-widest italic">Shared or Owned</h6>
+                                <p class="text-slate-500 text-[11px]">Suporte a recursos globais e privados no mesmo esquema.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-fingerprint text-cyan-500 mt-1"></i>
+                            <div>
+                                <h6 class="text-white font-bold text-xs uppercase tracking-widest italic">JWT Contextual</h6>
+                                <p class="text-slate-500 text-[11px]">Identidade do tenant amarrada ao token com claims seguras.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
