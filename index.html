@@ -266,9 +266,11 @@
                 </div>
 
                 <div class="p-8 border border-slate-800 rounded-2xl bg-card/20 feature-card transition-all text-left">
-                    <i class="fas fa-plug-circle-xmark text-cyan-500 mb-6 text-2xl"></i>
-                    <h4 class="text-white font-bold mb-3 italic">Graceful Degradation</h4>
-                    <p class="text-slate-400 text-sm leading-relaxed">Arquitetura resiliente com <strong>No-Op Fallback</strong>. Se o Redis ou RabbitMQ falharem, o sistema mantém-se online em modo degradado, evitando crashes em cascata.</p>
+                    <i class="fas fa- charms text-cyan-500 mb-6 text-2xl"></i>
+                    <h4 class="text-white font-bold mb-3 italic">Autonomous Self-Healing</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Engenharia de resiliência ativa. O sistema detecta falhas de infraestrutura e ativa **No-Op Fallbacks** instantaneamente. Um worker de background monitoriza a saúde e realiza **Hot Swapping** de conexões (Redis, Rabbit, Tracing) assim que os serviços recuperam, garantindo 100% de uptime operacional.
+                    </p>
                 </div>
 
             </div>
