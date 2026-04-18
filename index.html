@@ -650,6 +650,21 @@ s.Obs.RecordOutcome(ctx, <span class="text-yellow-500">"create"</span>, err)</pr
                     <h4 class="text-white font-bold mb-2">As imagens Docker são seguras para produção?</h4>
                     <p class="text-slate-400 text-sm italic">Utilizamos as melhores práticas de segurança: builds multi-stage, execução como utilizador non-root e imagens base minimalistas, garantindo performance e conformidade com padrões de segurança empresarial.</p>
                 </div>
+
+                <div class="p-6 border border-slate-800 rounded-xl bg-card/20">
+                    <h4 class="text-white font-bold mb-2">O sistema sobrevive a quedas de infraestrutura em runtime?</h4>
+                    <p class="text-slate-400 text-sm italic">
+                        Sim. Implementamos um motor de <strong>Self-Healing dinâmico</strong>. Se um serviço como Redis ou RabbitMQ falhar, o sistema ativa automaticamente implementações No-Op para evitar crashes em cascata. Assim que a infraestrutura recupera, o worker interno realiza um <strong>Hot Swap</strong> de conexões em tempo real, restaurando a saúde total sem necessidade de intervenção humana.
+                    </p>
+                </div>
+
+                <div class="p-6 border border-slate-800 rounded-xl bg-card/20">
+                    <h4 class="text-white font-bold mb-2">O template impõe algum framework proprietário ou lock-in?</h4>
+                    <p class="text-slate-400 text-sm italic">
+                        De forma alguma. Seguimos rigorosamente o padrão de <strong>Ports & Adapters</strong>. Toda a infraestrutura é gerida através de <strong>Contracts</strong>; o core do negócio conhece apenas as interfaces, nunca as implementações. Isso garante que possas trocar qualquer tecnologia (Base de Dados, Broker, Cache) sem tocar numa única linha de lógica de negócio.
+                    </p>
+                </div>
+
             </div>
         </div>
     </section>
