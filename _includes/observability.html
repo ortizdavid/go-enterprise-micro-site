@@ -53,17 +53,18 @@
                                     <div class="w-2 h-2 rounded-full bg-slate-700"></div>
                                 </div>
                             </div>
+
                             <pre class="text-[11px] md:text-xs leading-relaxed">
-<span class="text-slate-500">// 1. Start Contextual Operation</span>
-ctx, span := s.Obs.StartOperation(ctx, <span class="text-yellow-500">"create"</span>)
-<span class="text-pink-400">defer</span> span.End()
+            <span class="text-slate-500">// 1. Start Contextual Operation</span>
+            ctx, span := s.Obs.StartOperation(ctx, <span class="text-yellow-500">"create"</span>)
+            <span class="text-pink-400">defer</span> span.End()
 
-<span class="text-slate-500">// 2. Track Specific Stages</span>
-span.SetStage(constants.StageRepositoryCreate)
-err := s.Repo.Create(ctx, model)
+            <span class="text-slate-500">// 2. Track Specific Stages</span>
+            span.SetStage(constants.StageRepositoryCreate)
+            err := s.Repo.Create(ctx, model)
 
-<span class="text-slate-500">// 3. Automatic Outcome Recording</span>
-s.Obs.RecordOutcome(ctx, <span class="text-yellow-500">"create"</span>, err)</pre>
+            <span class="text-slate-500">// 3. Automatic Outcome Recording</span>
+            s.Obs.RecordOutcome(ctx, <span class="text-yellow-500">"create"</span>, err)</pre>
                             
                             <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between">
                                 <span class="text-[9px] text-slate-500 font-bold uppercase">Trace Status:</span>
@@ -77,11 +78,6 @@ s.Obs.RecordOutcome(ctx, <span class="text-yellow-500">"create"</span>, err)</pr
                                     <span class="text-slate-400">pprof listening on :6060</span>
                                 </div>
                                 <span class="text-slate-700">v1.0.0</span>
-                            </div>
-                            
-                            <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between">
-                                <span class="text-[9px] text-slate-500 font-bold uppercase">Trace Status:</span>
-                                <span class="px-2 py-1 bg-green-500/10 text-green-400 border border-green-500/20 rounded text-[9px] font-bold">200 OK - 1.58s</span>
                             </div>
                         </div>
                     </div>
